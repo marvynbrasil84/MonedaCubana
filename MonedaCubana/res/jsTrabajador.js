@@ -175,39 +175,42 @@ $("#btnEliminar").click(function () {
 $(document).ready(function ()
 {
     Visualizar();
-    //try {
-
-    //    jQuery.ajax({
-    //        type: "POST",
-    //        url: "/Trabajador/Planes_Entrenamiento",
-    //        //data: JSON.stringify(trabajador),
-    //        //contentType: "application/json; charset=utf-8",
-    //        dataType: "json",
-    //        cache: false,
-    //        beforeSend: function (xhr) {
-
-    //        },
-    //        success: function (dato) {
-
-    //            Visualizar(dato);
-    //        },
-    //        failure: function (msg) {
-    //            console.log(msg.description);
-    //        },
-    //        error: function (xhr, err) {
-    //            console.log("ESTADO---->>>  " + xhr.status + "\n" + "xhr.responseText---->>>  " + xhr.responseText, "\n" + "ERR---->>>  " + err);
-    //        },
-    //        complete: function (xhr, com) {
-
-    //        }
-    //    });
-
-    //}
-
-    //catch (ex) {
-    //    console.log(ex.message);
-    //}
+    Actualizar_Fecha();
 });
+
+function Actualizar_Fecha()
+{
+    try {
+        $.datepicker.regional['es'] = {
+            //closeText: 'Cerrar',
+            prevText: '< Ant',
+            nextText: 'Sig >',
+            //currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            //  dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            // weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            changeMonth: true,
+            changeYear: true
+            //  isRTL: false,
+            // showMonthAfterYear: false,
+            //yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+
+        //Máscara
+        $("#Persona_Fecha_Nacimiento").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
+        
+        $("#Persona_Fecha_Nacimiento").datepicker().datepicker("setDate", new Date());
+    }
+    catch (ex) {
+        console.log(ex.toString);
+    }
+}
 
 function Visualizar(/*pObjet*/)
 {
@@ -270,24 +273,7 @@ function Visualizar(/*pObjet*/)
                 "bRegex": false,
                 "bSmart": true
             }
-        });//,
-
-        //    "columns": [{ "title": "CI", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Nombre", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Sexo", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Raza", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Nivel_Escolar", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Fecha_Nacimiento", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Telefono", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Lugar_Nacimiento", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Nacionalidad", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Militancia", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Direccion", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Correo", "class": "td-text-align-left", "width": "139px" },
-        //        { "title": "Ocupacion", "class": "td-text-align-left", "width": "139px" }
-        //        { "title": "Salario", "class": "td-text-align-left", "width": "139px" }
-        //    ]
-        //});
+        });
 
     }
     catch (ex) {
@@ -295,4 +281,51 @@ function Visualizar(/*pObjet*/)
     }
 
 }
+
+$(".fa-close").click(function () {
+    var CI = $(this).attr("data-ci");
+    
+    var trabajador = {
+        CI: CI
+    };
+
+
+    try {
+
+        jQuery.ajax({
+            type: "POST",
+            url: "/Trabajador/Eliminar",
+            data: JSON.stringify(trabajador),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            beforeSend: function (xhr) {
+
+            },
+            success: function (dato) {
+
+                if (dato.data) {
+                    location.href = "/Trabajador/Index";
+                }
+            },
+            failure: function (msg) {
+                console.log(msg.description);
+            },
+            error: function (xhr, err) {
+                console.log("ESTADO---->>>  " + xhr.status + "\n" + "xhr.responseText---->>>  " + xhr.responseText, "\n" + "ERR---->>>  " + err);
+            },
+            complete: function (xhr, com) {
+
+            }
+        });
+
+    }
+
+    catch (ex) {
+        console.log(ex.message);
+    }
+});
+
+
+
 
