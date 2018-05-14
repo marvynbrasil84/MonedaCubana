@@ -1,0 +1,42 @@
+﻿@model MonedaCubana.Models.Trabajador
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trabajador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.Militancia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.Militancia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ocupacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ocupacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CI_Trabajado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

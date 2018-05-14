@@ -1,0 +1,153 @@
+﻿@model MonedaCubana.Models.Trabajador
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutSolution.cshtml";
+}
+
+
+   @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<div class="form-horizontal">
+    <h2>Crear Trabajador</h2    >
+    <hr />
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> CI </label> @*@Html.LabelFor(model => model.Persona.CI, "CI", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_CI" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.CI, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.CI, "", new { @class = "text-danger" })
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Nombre </label>@*@Html.LabelFor(model => model.Persona.Nombre, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Nombre" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Nombre, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Nombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Sexo </label>@*@Html.LabelFor(model => model.Persona.Sexo, "Sexo", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Sexo" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Sexo, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Sexo, "", new { @class = "text-danger" })
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Nivel Escolar </label>@*@Html.LabelFor(model => model.Persona.Nivel_Escolar, "Nivel Escolar", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Nivel_Escolar" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Nivel_Escolar, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Nivel_Escolar, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Fecha Nacimiento </label>
+        @*@Html.LabelFor(model => model.Persona.Fecha_Nacimiento, "Fecha Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Fecha_Nacimiento" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Fecha_Nacimiento, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Fecha_Nacimiento, "", new { @class = "text-danger" })
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Correo </label>@*@Html.LabelFor(model => model.Persona.Correo, "Correo", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Correo" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Correo, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Correo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Teléfono </label>@*@Html.LabelFor(model => model.Persona.Telefono, "Telefono", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Telefono" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Telefono, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Telefono, "", new { @class = "text-danger" })
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Lugar de Nacimiento </label>@*@Html.LabelFor(model => model.Persona.Lugar_Nacimiento, "Lugar Nacimiento", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Lugar_Nacimiento, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Lugar_Nacimiento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Nacionalidad </label>@*@Html.LabelFor(model => model.Persona.Nacionalidad, "Nacionalidad", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3 ">
+            <input type="text" id="Persona_Nacionalidad" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Nacionalidad, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Nacionalidad, "", new { @class = "text-danger" })
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Militancia </label>@*@Html.LabelFor(model => model.Persona.Militancia, "Militancia", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Militancia" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Militancia, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Militancia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Salario </label>
+        @*@Html.LabelFor(model => model.Salario, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Salario" class="form-control" />
+            @*@Html.EditorFor(model => model.Salario, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Salario, "", new { @class = "text-danger" })
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Ocupación </label>
+        @*@Html.LabelFor(model => model.Ocupacion, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-3">
+            <input type="text" id="Persona_Ocupacion" class="form-control" />
+            @*@Html.EditorFor(model => model.Ocupacion, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Ocupacion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Dirección </label>
+        @*@Html.LabelFor(model => model.Persona.Direccion, "Direccion", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3"></textarea>
+            @*@Html.EditorFor(model => model.Persona.Direccion, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Persona.Direccion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Create" class="btn btn-default" id="btnCrear" />
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Editar" class="btn btn-default" id="btnEditar" />
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Eliminar" class="btn btn-default" id="btnEliminar" />
+        </div>
+    </div>*@
+</div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<div>
+    <input type="button" id="btnCrear" value="Crear"/>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script src="~/res/jsTrabajador.js"></script>
+<link href="~/css/cssGenerico.css" rel="stylesheet" />
+
+<link href="~/css/jquery.dataTables.min.css" rel="stylesheet" /> 
+    
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+}

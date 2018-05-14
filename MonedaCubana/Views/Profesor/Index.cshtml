@@ -1,0 +1,119 @@
+﻿@model IEnumerable<MonedaCubana.Models.Profesor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.CI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Raza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Nivel_Escolar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Fecha_Nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Lugar_Nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Nacionalidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Militancia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria_Cientifica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria_Docente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.CI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Raza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Nivel_Escolar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Fecha_Nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Lugar_Nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Nacionalidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Militancia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria_Docente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CI }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CI }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CI })
+        </td>
+    </tr>
+}
+
+</table>
+

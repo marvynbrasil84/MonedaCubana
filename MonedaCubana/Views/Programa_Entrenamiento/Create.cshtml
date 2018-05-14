@@ -1,0 +1,58 @@
+﻿@model MonedaCubana.Models.Programa_Entrenamiento
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+
+<div class="form-horizontal">
+    <h4>Trabajador</h4>
+    <hr />
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Período </label> @*@Html.LabelFor(model => model.Persona.CI, "CI", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            <input type="text" id="Periodo" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.CI, new { htmlAttributes = new { @class = "form-control" } })*@
+            @*@Html.ValidationMessageFor(model => model., "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Plan Curricular </label>@*@Html.LabelFor(model => model.Persona.Nombre, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            <input type="text" id="Curricular" class="form-control" />
+            @*@Html.EditorFor(model => model.Persona.Nombre, new { htmlAttributes = new { @class = "form-control" } })*@
+            @*@Html.ValidationMessageFor(model => model.Persona.Nombre, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Create" class="btn btn-default" id="btnCrear" />
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Editar" class="btn btn-default" id="btnEditar" />
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Eliminar" class="btn btn-default" id="btnEliminar" />
+        </div>
+    </div>
+</div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/res/jsPlanEntrenamiento.js"></script>
+
+}

@@ -1,0 +1,135 @@
+﻿@model IEnumerable<MonedaCubana.Models.Trabajador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSolution.cshtml";
+}
+
+<h2>Listado de Trabajadores</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create", "Controller", new { @class = "btn btn-info", style="margin-bottom:1em"})
+</p>
+<table class="display tableDesign" id="trabajadores">
+    <thead>
+        <tr>
+            <th>
+                Sel.
+            </th>
+            <th>
+                Eliminar
+            </th>
+            <th>
+                CI
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Sexo
+            </th>
+            <th>
+                Raza
+            </th>
+            <th>
+                Nivel_Escolar
+            </th>
+            <th>
+                Fecha_Nacimiento
+            </th>
+            <th>
+                Telefono
+            </th>
+            <th>
+                Lugar_Nacimiento
+            </th>
+            <th>
+                Nacionalidad
+            </th>
+            <th>
+                Militancia
+            </th>
+            <th>
+                Direccion
+            </th>
+            <th>
+                Correo
+            </th>
+            <th>
+                Ocupacion
+            </th>
+            <th>
+                Salario
+            </th>
+            @*<th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td style="text-align:center">
+               <i class="fa fa-edit"></i>
+            </td>
+            <td style="text-align:center">
+                <i class="fa fa-close"></i>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.CI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Raza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Nivel_Escolar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Fecha_Nacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Lugar_Nacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Nacionalidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Militancia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ocupacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salario)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CI }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CI }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CI })
+            </td>*@
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/res/jsTrabajador.js"></script>
+    <script src="~/Scripts/dataTables.js"></script>
+   @* <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />*@
+}
