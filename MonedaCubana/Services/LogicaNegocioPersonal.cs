@@ -12,6 +12,18 @@ namespace MonedaCubana.Services
         public LogicaNegocioPersonal()
         { }
 
+        public Trabajador ObtenerTrabajador_CI(long? CI)
+        {
+            try
+            {
+                return db.Trabajador.Find(CI);
+            }
+            catch (Exception ex)
+            {
+                return new Trabajador();
+            }
+        }
+
         public List<Trabajador> ObtenerTrabajadores()
         {
             try

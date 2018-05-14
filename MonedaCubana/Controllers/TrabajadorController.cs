@@ -76,7 +76,7 @@ namespace MonedaCubana.Controllers
         }
 
         [WebMethod]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public JsonResult Modificar([Bind(Include = "CI,Ocupacion,Salario")] Trabajador trabajador,
             [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre")] Persona persona)
 
@@ -99,21 +99,24 @@ namespace MonedaCubana.Controllers
             
         }
 
-        // GET: Trabajador/Edit/5
-        //public ActionResult Edit(long? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Trabajador trabajador = db.Trabajador.Find(id);
-        //    if (trabajador == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    ViewBag.CI_Trabajado = new SelectList(db.Persona, "CI", "Militancia", trabajador.CI);
-        //    return View(trabajador);
-        //}
+        //GET: Trabajador/Edit/5
+        public ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Trabajador trabajador = ctr.ObtenerTrabajador_CI(id);//db.Trabajador.Find(id);
+            if (trabajador == null)
+            {
+                return HttpNotFound();
+            }
+            //ViewBag.CI_Trabajado = new SelectList(db.Persona, "CI", "Militancia", trabajador.CI);
+            ViewBag.Trabajador = trabajador;
+           
+            return View();
+        }
+        
 
         //// POST: Trabajador/Edit/5
         //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 

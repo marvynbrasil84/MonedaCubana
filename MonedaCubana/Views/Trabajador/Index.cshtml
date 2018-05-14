@@ -69,10 +69,12 @@
         {
         <tr>
             <td style="text-align:center">
-               <i class="fa fa-edit"></i>
+               @*<i class="fa fa-edit" data-CI=item.Persona.CI></i>*@
+                @Html.ActionLink(" ", "Edit", new { id = item.CI },  new { @class = "fa fa-edit", style = "margin-bottom:1em" })
             </td>
             <td style="text-align:center">
-                <i class="fa fa-close"></i>
+                <i class="fa fa-close" data-tipo="borrar" data-ci="@item.CI" ></i>
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.CI })*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Persona.CI)
