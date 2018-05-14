@@ -27,6 +27,7 @@ namespace MonedaCubana
                       "~/Content/bootstrap.css",
                        "~/Content/jquery.dataTables.min.css",
                          "~/Content/jquery-ui-min.css",
+                         "~/Content/jquery-ui-1.10.4.css",
                           "~/Content/datatables.css",
                           "~/Content/subpaginas.css",
                           "~/Content/font-awesome-4.7.0/css/font-awesome.min.css",
