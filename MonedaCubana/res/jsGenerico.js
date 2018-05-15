@@ -9,7 +9,7 @@ function ValidarCampoTextoRequerido(pObjeto, pNombreCampo, pNombreValidador) {
             switch (Rutina_NombreExplorador()) {
                 case "Mozilla":
                 case "Opera":
-                    pObjeto.className = "ErrorValidadorTexto";
+                    //pObjeto.className = "ErrorValidadorTexto";
                     Rutina_MuestraMensaje("Debe especificar " + pNombreCampo + "!!!");
                     break;
                 case "Explorer":
@@ -29,20 +29,21 @@ function ValidarCampoTextoRequerido(pObjeto, pNombreCampo, pNombreValidador) {
 
 
 
-function ValidarCampoTextoFormatoCorreo(pObjeto, pNombreCampo) {
-    pObjeto = document.getElementById(pObjeto);
+function ValidarCampoTextoFormatoCorreo(pObjeto) {
+    //pObjeto = document.getElementById(pObjeto);
     //  _ExpresionRegular = new RegExp("[0-9a-zA-Z]@[0-9a-zA-Z]{2,}'.'[0-9a-zA-Z]{2,}");
     //"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
     if (pObjeto != null) {
         _ExpresionRegular = new RegExp("^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$");
         if (_ExpresionRegular.exec(pObjeto.value)) {
 
-            pObjeto.className = "GeneralItems";
+            //pObjeto.className = "GeneralItems";
             return true;
         }
         else {
-            pObjeto.className = "ErrorValidadorTexto";
-            Rutina_MuestraMensaje("El formato del " + pNombreCampo + " es incorrecto!!!");
+            //pObjeto.className = "ErrorValidadorTexto";
+            Rutina_MuestraMensaje("El formato del correo es incorrecto!!!");
+            pObjeto.value = ' ';
             return false;
         }
     }
@@ -68,7 +69,7 @@ function Rutina_ValidaNumero(pObjeto) {
     //intento convertir a entero.
     //si era un entero no le afecta, si no lo era lo intenta convertir
     var valor = pObjeto.value;
-    pObjeto.className = "GeneralItems";
+    //pObjeto.className = "GeneralItems";
 
     if (valor != "") {
 
@@ -84,14 +85,14 @@ function Rutina_ValidaNumero(pObjeto) {
             Rutina_MuestraMensaje('Este campo solo acepta valores Númericos!!!');
             pObjeto.value = "0";
             pObjeto.focus();
-            pObjeto.className = "ErrorValidadorTexto";
+            //pObjeto.className = "ErrorValidadorTexto";
             return false;
         }
 
         if (Number(pObjeto.value) < 0) {
             pObjeto.value = '0';
             Rutina_MuestraMensaje('No se puede ingresar valores negativos.');
-            pObjeto.className = "ErrorValidadorTexto";
+            //pObjeto.className = "ErrorValidadorTexto";
             return false;
 
 
@@ -112,7 +113,7 @@ function Rutina_ValidaNumero_Entero(pObjet) {
             Rutina_MuestraMensaje('No se puede ingresar valores negativos.');
             //_dialog.dialog("open");
             //se muestra el mensaje
-            pObjet.className = "ErrorValidadorTexto";
+            //pObjet.className = "ErrorValidadorTexto";
             return;
 
 
@@ -124,11 +125,11 @@ function Rutina_ValidaNumero_Entero(pObjet) {
                 Rutina_MuestraMensaje('Solo se permiten valores enteros.');
                 //_dialog.dialog("open");
                 //se muestra el mensaje
-                pObjet.className = "ErrorValidadorTexto";
+                //pObjet.className = "ErrorValidadorTexto";
                 return false;
             }
 
-            pObjet.className = "GeneralItems";
+           // pObjet.className = "GeneralItems";
         }
     }
 
@@ -161,7 +162,7 @@ Función para validar que se ingresen solo letras en un textBox
 */
 function Rutina_ValidarTexto(pObjeto) {
     _ExpresionRegular = new RegExp("[a-zA-Z]");
-    pObjeto.className = "GeneralItems";
+    //pObjeto.className = "GeneralItems";
 
     if (pObjeto.value != "") {
         if (_ExpresionRegular.exec(pObjeto.value)) {
@@ -170,7 +171,7 @@ function Rutina_ValidarTexto(pObjeto) {
             Rutina_MuestraMensaje("El texto introducido es incorrecto.");
             pObjeto.value = "";
             pObjeto.focus();
-            pObjeto.className = "ErrorValidadorTexto";
+            //pObjeto.className = "ErrorValidadorTexto";
             return false;
         }
     }

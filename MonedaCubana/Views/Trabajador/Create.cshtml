@@ -16,12 +16,12 @@
     <div class="form-group">
         <label class="control-label col-md-2"> CI </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_CI" class="form-control" />
+            <input type="text" id="Persona_CI" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" maxlength="11" />
         </div>
 
         <label class="control-label col-md-2 col-md-offset-2"> Nombre </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Nombre" class="form-control" />
+            <input type="text" id="Persona_Nombre" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
         </div>
     </div>
 
@@ -55,7 +55,7 @@
 
         <label class="control-label col-md-2 col-md-offset-2"> Correo </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Correo" class="form-control" />
+            <input type="text" id="Persona_Correo" class="form-control" onchange="ValidarCampoTextoFormatoCorreo(this)" />
 
         </div>
     </div>
@@ -63,33 +63,38 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Teléfono </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Telefono" class="form-control" />
+            <input type="text" id="Persona_Telefono" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Lugar de Nacimiento </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" />
+            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Nacionalidad </label>
         <div class="col-md-3 ">
-            <input type="text" id="Persona_Nacionalidad" class="form-control" />
+            <input type="text" id="Persona_Nacionalidad" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Militancia </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Militancia" class="form-control" />
+            @*<input type="text" id="Persona_Militancia" class="form-control" />*@
+            <select id="Persona_Militancia" class="form-control">
+                <option value="UJC">UJC</option>
+                <option value="PCC">PCC</option>
+                <option value="No">No</option>
+            </select>
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Salario </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Salario" class="form-control" />
+            <input type="text" id="Persona_Salario" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Ocupación </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Ocupacion" class="form-control" />
+            <input type="text" id="Persona_Ocupacion" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
         </div>
     </div>
 
@@ -98,9 +103,9 @@
         <label class="control-label col-md-2 "> Raza </label>
         <div class="col-md-3">
             <select id="Persona_Raza" class="form-control">
-                <option value="B">Blanco</option>
-                <option value="M">Mestizo</option>
-                <option value="N">Negro</option>
+                <option value="B">B</option>
+                <option value="M">M</option>
+                <option value="N">N</option>
             </select>
 
         </div>
@@ -128,9 +133,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-
-<link href="~/css/sweetalert.css" rel="stylesheet" />
-<script src="~/Scripts/sweetalert.min.js"></script>
-<script src="~/res/jsTrabajador.js"></script>
-<script src="~/res/jsGenerico.js"></script>
+    <script src="~/res/jsTrabajador.js"></script>    
 }
