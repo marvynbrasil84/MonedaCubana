@@ -11,32 +11,35 @@
     @Html.ActionLink("Nuevo", "Create", "Controller", new { @class = "btn btn-info", style = "margin-bottom:1em" })
 </p>
 <table class="display tableDesign" id="alumnos">
-    <tr>
-        <th>Sel.</th>
-        <th>Eliminar</th>
-        @* Datos Persona *@
-        <th>CI</th>
-        <th>Nombre</th>
-        <th>Sexo</th>
-        <th>Raza</th>
-        <th>Nivel_Escolar</th>
-        <th>Fecha_Nacimiento</th>
-        <th>Telefono</th>
-        <th>Lugar_Nacimiento</th>
-        <th>Nacionalidad</th>
-        <th>Militancia</th>
-        <th>Direccion</th>
-        <th>Correo</th>
-        @* Datos Persona *@
-        <th>Telefono_Padre</th>
-        <th>Telefono_Madre</th>
-        <th>Nombre_Padre</th>
-        <th>Nombre_Madre</th>
-        <th>Categoria</th>
-        <th>Foto</th>
-    </tr>
-
-    @foreach (var item in Model)
+    <thead>
+        <tr>
+            <th>Sel.</th>
+            <th>Eliminar</th>
+            @* Datos Persona *@
+            <th>CI</th>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Raza</th>
+            <th>Nivel_Escolar</th>
+            <th>Fecha_Nacimiento</th>
+            <th>Telefono</th>
+            <th>Lugar_Nacimiento</th>
+            <th>Nacionalidad</th>
+            <th>Militancia</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            @* Datos Persona *@
+            <th>Telefono_Padre</th>
+            <th>Telefono_Madre</th>
+            <th>Nombre_Padre</th>
+            <th>Nombre_Madre</th>
+            <th>Categoria</th>
+            <th>Foto</th>
+        </tr>
+    </thead>
+  
+    <tbody>
+        @foreach (var item in Model)
     {
         <tr>
             <td style="text-align:center">
@@ -103,7 +106,9 @@
             </td>
 
         </tr>
-    }
+}
+    </tbody>
+  
 
 </table>
 @section Scripts {
