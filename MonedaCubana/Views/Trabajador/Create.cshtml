@@ -30,8 +30,11 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Sexo </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Sexo" class="form-control" />
-            
+            <select id="Persona_Sexo" class="form-control">
+                <option value="M">M</option>
+                <option value="F">F</option>
+                
+            </select>
             
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Nivel Escolar </label>
@@ -128,10 +131,12 @@
     @Scripts.Render("~/bundles/jqueryval")
 <link href="~/css/cssGenerico.css" rel="stylesheet" />
 <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/css/sweetalert.css" rel="stylesheet" />
 
 <script src="~/Scripts/jquery.dataTables.min.js"></script>
 <script src="~/Scripts/jquery.maskedinput.js"></script>
 <script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/sweetalert.min.js"></script>
 <script src="~/res/jsTrabajador.js"></script>
-
+<script src="~/res/jsGenerico.js"></script>
 }
