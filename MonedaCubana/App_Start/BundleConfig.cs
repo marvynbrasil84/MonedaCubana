@@ -20,7 +20,9 @@ namespace MonedaCubana
                         "~/Scripts/modernizr-*",
                         "~/Scripts/jquery-ui.min.js",
                         "~/Scripts/jquery.maskedinput.js",
-                        "~/Scripts/dataTables.js"));
+                        "~/Scripts/dataTables.js",
+                        "~/Scripts/sweetalert.min.js",
+                        "~/res/jsGenerico.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
@@ -34,6 +36,7 @@ namespace MonedaCubana
                           "~/Content/datatables.css",
                           "~/Content/subpaginas.css",
                           "~/Content/font-awesome-4.7.0/css/font-awesome.min.css",
+                          "~/css/sweetalert.css",
                       "~/Content/site.css"));
         }
     }

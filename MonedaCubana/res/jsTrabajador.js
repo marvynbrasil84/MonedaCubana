@@ -1,4 +1,5 @@
 ﻿$("#btnCrear").click(function () {
+    
     var CI = $("#Persona_CI").val();
     var Nombre = $("#Persona_Nombre").val();
     var Sexo = $("#Persona_Sexo").val();
@@ -13,6 +14,8 @@
     var Ocupacion = $("#Persona_Ocupacion").val();
     var Salario = $("#Persona_Salario").val();
     var Raza = "M"
+    
+
     var trabajador = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,
