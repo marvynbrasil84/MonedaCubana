@@ -301,9 +301,9 @@ a.article, a.article:hover {
     padding: initial !important;
 }
 
-.form-group {
+/*.form-group {
      margin-bottom: 0px !important; 
-}
+}*/
 
 i {
     cursor: pointer;
