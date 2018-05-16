@@ -166,6 +166,39 @@ $(document).ready(function () {
     Actualizar_Fecha();
 });
 
+function Actualizar_Fecha() {
+    try {
+        $.datepicker.regional['es'] = {
+            //closeText: 'Cerrar',
+            prevText: '< Ant',
+            nextText: 'Sig >',
+            //currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            //  dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            // weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            changeMonth: true,
+            changeYear: true
+            //  isRTL: false,
+            // showMonthAfterYear: false,
+            //yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+
+        //Máscara
+        $("#Persona_Fecha_Nacimiento").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
+
+        $("#Persona_Fecha_Nacimiento").datepicker().datepicker("setDate", new Date());
+    }
+    catch (ex) {
+        console.log(ex.toString);
+    }
+}
+
 function Visualizar(/*pObjet*/) {
     try {
         //var _dataSet = new Array();
@@ -234,3 +267,47 @@ function Visualizar(/*pObjet*/) {
     }
 
 }
+
+$(".fa-close").click(function () {
+    var CI = $(this).attr("data-ci");
+
+    var trabajador = {
+        CI: CI
+    };
+
+
+    try {
+
+        jQuery.ajax({
+            type: "POST",
+            url: "/Profesor/Eliminar",
+            data: JSON.stringify(trabajador),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            beforeSend: function (xhr) {
+
+            },
+            success: function (dato) {
+
+                if (dato.data) {
+                    location.href = "/Profesor/Index";
+                }
+            },
+            failure: function (msg) {
+                console.log(msg.description);
+            },
+            error: function (xhr, err) {
+                console.log("ESTADO---->>>  " + xhr.status + "\n" + "xhr.responseText---->>>  " + xhr.responseText, "\n" + "ERR---->>>  " + err);
+            },
+            complete: function (xhr, com) {
+
+            }
+        });
+
+    }
+
+    catch (ex) {
+        console.log(ex.message);
+    }
+});

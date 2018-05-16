@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MonedaCubana.Models;
 using System.Web.Services;
 using MonedaCubana.Services;
+using System.Net;
 
 namespace MonedaCubana.Controllers
 {
@@ -67,6 +68,24 @@ namespace MonedaCubana.Controllers
             return Json(new { data = false });
         }
 
-        
+        //GET: Trabajador/Edit/5
+        public ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Profesor profesor = ctr.ObtenerProfesor_CI(id);//db.Trabajador.Find(id);
+            if (profesor == null)
+            {
+                return HttpNotFound();
+            }
+            //ViewBag.CI_Trabajado = new SelectList(db.Persona, "CI", "Militancia", trabajador.CI);
+            ViewBag.Profesor = profesor;
+
+            return View();
+        }
+
+
     }
 }

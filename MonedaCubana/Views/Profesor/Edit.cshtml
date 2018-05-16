@@ -10,24 +10,26 @@
 @Html.ValidationSummary(true)
 
 <div class="form-horizontal">
-    <h2>Crear Profesor</h2>
+    <h2>Editar Profesor</h2>
     <hr />
 
     <div class="form-group">
         <label class="control-label col-md-2"> CI </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_CI" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" maxlength="11" />
-        </div>
+            <input type="text" id="Persona_CI" class="form-control" value="@ViewBag.Profesor.CI" disabled="disabled" />
 
+        </div>
         <label class="control-label col-md-2 col-md-offset-2"> Nombre </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Nombre" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Persona_Nombre" class="form-control" value="@ViewBag.Profesor.Persona.Nombre" disabled="disabled" />
+
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Sexo </label>
         <div class="col-md-3">
+            @*<input type="text" id="Persona_Sexo" class="form-control" value="@ViewBag.Profesor.Persona.Sexo" disabled="disabled" />*@
             <select id="Persona_Sexo" class="form-control">
                 <option value="M">M</option>
                 <option value="F">F</option>
@@ -35,9 +37,9 @@
             </select>
 
         </div>
-
         <label class="control-label col-md-2 col-md-offset-2"> Nivel Escolar </label>
         <div class="col-md-3">
+
             <select id="Persona_Nivel_Escolar" class="form-control">
                 <option value="Medio-Superior">Medio-Superior</option>
                 <option value="Medio">Medio</option>
@@ -47,15 +49,18 @@
         </div>
     </div>
 
+
+
     <div class="form-group">
         <label class="control-label col-md-2"> Fecha Nacimiento </label>
-        <div class="col-md-3">
-            <input type="text" id="Persona_Fecha_Nacimiento" class="form-control" />
-        </div>
 
+        <div class="col-md-3">
+            <input type="text" id="Persona_Fecha_Nacimiento" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Nacimiento" disabled="disabled" />
+
+        </div>
         <label class="control-label col-md-2 col-md-offset-2"> Correo </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Correo" class="form-control" onchange="ValidarCampoTextoFormatoCorreo(this)" />
+            <input type="text" id="Persona_Correo" class="form-control" value="@ViewBag.Profesor.Persona.Correo" onchange="ValidarCampoTextoFormatoCorreo(this)" />
 
         </div>
     </div>
@@ -63,33 +68,42 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Teléfono </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Telefono" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" />
+            <input type="text" id="Persona_Telefono" class="form-control" value="@ViewBag.Profesor.Persona.Telefono" onchange="Rutina_ValidaNumero_Entero(this)" />
+
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Lugar de Nacimiento </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" value="@ViewBag.Profesor.Persona.Lugar_Nacimiento" disabled="disabled" />
+
         </div>
     </div>
+
 
     <div class="form-group">
         <label class="control-label col-md-2"> Nacionalidad </label>
         <div class="col-md-3 ">
-            <input type="text" id="Persona_Nacionalidad" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Persona_Nacionalidad" class="form-control" value="@ViewBag.Profesor.Persona.Nacionalidad" onchange="Rutina_ValidarTexto(this)" />
+
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Militancia </label>
         <div class="col-md-3">
+            @*<input type="text" id="Persona_Militancia" class="form-control" value="@ViewBag.Profesor.Persona.Militancia" />*@
             <select id="Persona_Militancia" class="form-control">
                 <option value="UJC">UJC</option>
                 <option value="PCC">PCC</option>
                 <option value="No">No</option>
             </select>
+
         </div>
     </div>
 
+
     <div class="form-group">
         <label class="control-label col-md-2"> Salario </label>
+
         <div class="col-md-3">
-            <input type="text" id="Persona_Salario" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" />
+            <input type="text" id="Persona_Salario" class="form-control" value="@ViewBag.Profesor.Salario" onchange="Rutina_ValidaNumero_Entero(this)" />
+
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Categoría Científica </label>
         <div class="col-md-3">
@@ -126,27 +140,50 @@
 
     <div class="form-group">
         <label class="control-label col-md-2"> Dirección </label>
+
         <div class="col-md-10">
-            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3"></textarea>
+            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3" value="@ViewBag.Profesor.Persona.Direccion"></textarea>
+
         </div>
     </div>
 
+
 </div>
-
-
 
 <div class="row">
     <div class="col-md-6">
         @Html.ActionLink("<<Atrás", "Index")
     </div>
     <div class="col-md-6">
-        <input type="button" id="btnCrear" class="right btn btn-info" value="Crear" />
+        <input type="button" id="btnEditar" class="right btn btn-info" value="Editar" />
     </div>
 </div>
 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/res/jsProfesor.js"></script>
 
+    <script src="~/res/jsProfesor.js"></script>
+    <script>
+        $(document).ready(function () {
+            //-------------Nivel Escolar------------------------------------
+            var nivel_escolar = "@ViewBag.Profesor.Persona.Nivel_Escolar";
+            $("#Persona_Nivel_Escolar").val(nivel_escolar);
+
+            var sexo = "@ViewBag.Profesor.Persona.Sexo";
+            $("#Persona_Sexo").val(sexo)
+
+            var raza = "@ViewBag.Profesor.Persona.Raza";
+            $("#Persona_Raza").val(raza);
+
+            var militancia = "@ViewBag.Profesor.Persona.Militancia";
+            $("#Persona_Militancia").val(militancia);
+
+            var Categ_Cient = "@ViewBag.Profesor.Categoria_Cientifica";
+            $("#Persona_Categoria_Cientifica").val(Categ_Cient);
+
+            var Categ_Doc = "@ViewBag.Profesor.Categoria_Docente";
+            $("#Persona_Categoria_Docente").val(Categ_Doc);
+        })
+    </script>
 }

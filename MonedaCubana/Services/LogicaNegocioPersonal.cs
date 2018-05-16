@@ -60,6 +60,18 @@ namespace MonedaCubana.Services
             }
         }
 
+        public Profesor ObtenerProfesor_CI(long? CI)
+        {
+            try
+            {
+                return db.Profesor.Find(CI);
+            }
+            catch (Exception ex)
+            {
+                return new Profesor();
+            }
+        }
+
         public bool AdicionarTrabajador(Persona p, Trabajador t)
         {
             

@@ -267,6 +267,7 @@
     <Content Include="Views\Taller\Create.cshtml" />
     <Content Include="Views\Shared\_LayoutSolution.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Profesor\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
