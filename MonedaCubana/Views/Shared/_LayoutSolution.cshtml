@@ -13,43 +13,49 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-                <strong>BS</strong>
+                <h3>Logo</h3>
+                <strong>MC</strong>
             </div>
 
             <ul class="list-unstyled components">
                 <li class="active ">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                        <i class="glyphicon glyphicon-home"></i>
-                        Home
+                    <a href="#personalSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Personal
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a href="#">Home 1</a></li>
-                        <li><a href="#">Home 2</a></li>
-                        <li><a href="#">Home 3</a></li>
+                    <ul class="collapse list-unstyled" id="personalSubmenu">
+                        <li><a href="~/Profesor/">Profesores</a></li>
+                        <li><a href="~/Alumno">Alumnos</a></li>
+                        <li><a href="~/Trabajador">Trabajadores</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="glyphicon glyphicon-briefcase"></i>
-                        About
+                   
+                    <a href="#gestionSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-education"></i>
+                        Gestion Curso
                     </a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                        <i class="glyphicon glyphicon-home"></i>
-                        Pages
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
+                    <ul class="collapse list-unstyled" id="gestionSubmenu">
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="~/Taller">Talleres</a></li>
+                        <li><a href="#">Grupos</a></li>
+                        <li><a href="#">Preparatorias</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="glyphicon glyphicon-link"></i>
-                        Portfolio
+                    <a href="#secretariaSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-book"></i>
+                        Secretaria Docente
                     </a>
+                    <ul class="collapse list-unstyled" id="secretariaSubmenu">
+                        <li><a href="#">Alumno-Grupo</a></li>
+                        <li><a href="#">Profesor-Grupo</a></li>
+                        <li><a href="#">Profesor-Asignatura</a></li>
+                        <li><a href="#">Alumno-Asignatura</a></li>
+                        <li><a href="#">Curso-Grupo</a></li>
+                    </ul>
                 </li>
+                
                 <li>
                     <a href="#">
                         <i class="glyphicon glyphicon-paperclip"></i>
@@ -84,10 +90,7 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Page</a></li>
-                            <li><a href="#">Page</a></li>
-                            <li><a href="#">Page</a></li>
-                            <li><a href="#">Page</a></li>
+                            <li><p style="padding: 5px; font-size: x-large;  font-style: italic; font-family: -webkit-pictograph; font-weight: bold; color: dodgerblue;">Moneda Cubana</p></li>
                         </ul>
                     </div>
                 </div>
@@ -100,8 +103,9 @@
         </div>
 
         @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/modernizr")
+
         @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/modernizr")
         @RenderSection("scripts", required: false)
         <script type="text/javascript">
             $(document).ready(function () {
