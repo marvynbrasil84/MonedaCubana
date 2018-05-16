@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MonedaCubana.Controllers
 {
-    public class GeneralController : Controller
+    public class ProfesorAsignaturaController : Controller
     {
         // GET: General
         public ActionResult Index()

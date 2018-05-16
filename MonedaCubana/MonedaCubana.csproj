@@ -151,6 +151,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlumnoController.cs" />
+    <Compile Include="Controllers\ProfesorAsignaturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Controllers\Programa_EntrenamientoController.cs" />
@@ -267,6 +268,7 @@
     <Content Include="Views\Taller\Create.cshtml" />
     <Content Include="Views\Shared\_LayoutSolution.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\ProfesorAsignatura\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
