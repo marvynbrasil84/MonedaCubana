@@ -273,6 +273,7 @@
     <Content Include="Views\Profesor\Edit.cshtml" />
     <Content Include="Views\ProfesorAsignatura\Index.cshtml" />
     <Content Include="Views\Taller\Edit.cshtml" />
+    <Content Include="Views\ProfesorAsignatura\_PartialAsignatura.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

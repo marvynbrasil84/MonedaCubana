@@ -69,14 +69,25 @@
                 @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
             </td>
             <td>
-              <input type="checkbox" class="asociar" />
+              <input type="button" class="asociar" data-toggle="modal" data-target="#ModalTipoArchivo"/>
             </td>
         </tr>
         }
     </tbody>
 
 </table>
+<div class="modal fade" id="ModalTipoArchivo" tabindex="-1" role="dialog" data-accion="" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document" style="width:70%">
+        <div class="modal-content">
+            <div id="contentModalTipoArchivo" class="modal-body">
+                @RenderPage("~/Views/profesorasignatura/_PartialAsignatura.cshtml")
+            </div>
+            <div class="modal-footer">
 
+            </div>
+        </div>
+    </div>
+</div>
 @section Scripts {
 
     @Scripts.Render("~/bundles/jqueryval")
