@@ -5,12 +5,24 @@ using System.Web;
 using MonedaCubana.Models;
 namespace MonedaCubana.Services
 {
-    
+
     public class LogicaNegocioTaller
     {
         private ApplicationDBContext db = new ApplicationDBContext();
         public LogicaNegocioTaller()
         { }
+
+        public List<string> Lista_Nombres_Talleres()
+        {
+            try
+            {
+              return  db.Taller.Select(x => x.Nombre).ToList();
+            }
+            catch (Exception ex)
+            {
+                return new List<string>();
+            }
+        }
 
         public List<Taller> ListaTaller()
         {

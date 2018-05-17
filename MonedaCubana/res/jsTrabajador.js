@@ -13,7 +13,7 @@
     var Correo = $("#Persona_Correo").val();
     var Ocupacion = $("#Persona_Ocupacion").val();
     var Salario = $("#Persona_Salario").val();
-    var Raza = "M"
+    var Raza = $("#Persona_Raza").val();
     
 
     var trabajador = {
@@ -87,7 +87,7 @@ $("#btnEditar").click(function () {
     var Correo = $("#Persona_Correo").val();
     var Ocupacion = $("#Persona_Ocupacion").val();
     var Salario = $("#Persona_Salario").val();
-    var Raza = "M"
+    var Raza = $("#Persona_Raza").val();
     var trabajador = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,

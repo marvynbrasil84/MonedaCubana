@@ -13,7 +13,7 @@
     var Categoria_Docente = $("#Persona_Categoria_Docente").val();
     var Categoria_Cientifica = $("#Persona_Categoria_Cientifica").val();
     var Salario = $("#Persona_Salario").val();
-    var Raza = "M"
+    var Raza = $("#Persona_Raza").val();
     var profesor = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,
@@ -74,7 +74,7 @@ $("#btnEditar").click(function () {
     var Categoria_Docente = $("#Persona_Categoria_Docente").val();
     var Categoria_Cientifica = $("#Persona_Categoria_Cientifica").val();
     var Salario = $("#Persona_Salario").val();
-    var Raza = "M"
+    var Raza = $("#Persona_Raza").val();
     var profesor = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,

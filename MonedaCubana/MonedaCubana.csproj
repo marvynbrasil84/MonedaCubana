@@ -180,6 +180,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LogicaNegocioPersonal.cs" />
     <Compile Include="Services\LogicaNegocioPlanEntrenamiento.cs" />
+    <Compile Include="Services\LogicaNegocioProfesorAsignatura.cs" />
     <Compile Include="Services\LogicaNegocioTaller.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +204,7 @@
     <Content Include="res\jsGenerico.js" />
     <Content Include="res\jsPlanEntrenamiento.js" />
     <Content Include="res\jsProfesor.js" />
+    <Content Include="res\jsProfesorAsignatura.js" />
     <Content Include="res\jsTaller.js" />
     <Content Include="res\jsTrabajador.js" />
     <Content Include="Scripts\bootstrap.js" />
