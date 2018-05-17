@@ -11,11 +11,32 @@ namespace MonedaCubana.Controllers
     public class TallerController : Controller
     {
         private LogicaNegocioTaller ctrTaller = new LogicaNegocioTaller();
-        private LogicaNegocioPlanEntrenamiento ctrPlan = new LogicaNegocioPlanEntrenamiento(); 
+        private LogicaNegocioPlanEntrenamiento ctrPlan = new LogicaNegocioPlanEntrenamiento();
+        private List<String> periodos;
         // GET: Taller
         public ActionResult Index()
         {
             return View(ctrTaller.ListaTaller());
+        }
+
+        //GET: Trabajador/Edit/5
+        public ActionResult Edit(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            Taller taller = ctrTaller.ObtenerTaller_Nombre(id);
+            if (taller == null)
+            {
+                return HttpNotFound();
+            }
+
+            //todo: Cambiar para evitar llamada innecesaria a la BD
+            ViewBag.Periodos = ctrPlan.Nombre_Curso_Entrenamiento();
+            ViewBag.Taller = taller;
+            
+            return View();
         }
 
         [WebMethod]
@@ -27,8 +48,8 @@ namespace MonedaCubana.Controllers
         [WebMethod]
         public JsonResult Planes_Entrenamiento()
         {
-            List<String> resultado = ctrPlan.Nombre_Curso_Entrenamiento();
-            return Json (new { data = resultado });
+            periodos = ctrPlan.Nombre_Curso_Entrenamiento();
+            return Json (new { data = periodos });
         }
         // GET: Taller/Create
         public ActionResult Create()

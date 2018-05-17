@@ -1,0 +1,58 @@
+﻿@model MonedaCubana.Models.Taller
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutSolution.cshtml";
+    
+}
+
+<div class="form-horizontal">
+    <h2>Editar Taller</h2>
+    <hr />
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Nombre </label>
+        <div class="col-md-3">
+            <input type="text" id="Nombre" class="form-control" value="@ViewBag.Taller.Nombre" disabled="disabled" />
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Período </label>
+        <div class="col-md-3">
+            <select id="cboTaller" class="form-control">
+                @foreach (var stud in @ViewBag.Periodos)
+                {
+
+                    <option value=@stud>@stud</option>
+
+                }
+            </select>
+
+        </div>
+    </div>
+
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        @Html.ActionLink("<<Atrás", "Index")
+    </div>
+    <div class="col-md-6">
+        <input type="button" id="btnEditar" class="right btn btn-info" value="Editar" />
+    </div>
+</div>
+
+  
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script src="~/res/jsTaller.js"></script>
+
+        <script>
+            $(document).ready(function ()
+            {
+                var periodo = "2018-2019";//"@ViewBag.Taller.Periodo";
+                
+                $("#cboTaller").val(periodo);
+            }
+        </script>
+    }

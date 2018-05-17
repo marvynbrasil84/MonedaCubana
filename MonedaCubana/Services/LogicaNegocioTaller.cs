@@ -28,6 +28,18 @@ namespace MonedaCubana.Services
             }
         }
 
+        public Taller ObtenerTaller_Nombre(String nombre)
+        {
+            try
+            {
+                return db.Taller.Find(nombre);
+            }
+            catch (Exception ex)
+            {
+                return new Taller();
+            }
+        }
+
         public bool Adicionar(Taller t)
         {
             try
