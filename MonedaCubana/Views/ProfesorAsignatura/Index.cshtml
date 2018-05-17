@@ -10,7 +10,7 @@
 <p>
     @Html.ActionLink("Nuevo", "Create", "Controller", new { @class = "btn btn-info", style="margin-bottom:1em"})
 </p>
-<table class="display tableDesign" id="trabajadores">
+<table class="display tableDesign" id="profesorasignatura">
     <thead>
         <tr>
             <th>
@@ -31,54 +31,18 @@
         @foreach (var item in Model)
         {
         <tr>
-            
             <td>
-                @Html.DisplayFor(modelItem => item.Persona.CI)
+                @Html.DisplayFor(modelItem => item.Persona.Nombre)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Persona.Sexo)
+                @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Persona.Raza)
+              <input type="checkbox" class="asociar" />
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Nivel_Escolar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Fecha_Nacimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Lugar_Nacimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Nacionalidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Militancia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Correo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ocupacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Salario)
-            </td>
-            @*<td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CI }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CI }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CI })
-            </td>*@
         </tr>
         }
     </tbody>
