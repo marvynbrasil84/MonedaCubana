@@ -13,7 +13,7 @@ namespace MonedaCubana.Models
         public Profesor()
         {
             Asignatura_Profesor = new List<Asignatura_Profesor>();
-            Grupoes = new List<Grupo>();
+            Grupo = new List<Grupo>();
         }
 
         [Key]
@@ -34,6 +34,6 @@ namespace MonedaCubana.Models
         public virtual Persona Persona { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grupo> Grupoes { get; set; }
+        public virtual ICollection<Grupo> Grupo { get; set; }
     }
 }

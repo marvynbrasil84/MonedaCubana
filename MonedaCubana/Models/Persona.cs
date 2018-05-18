@@ -12,7 +12,7 @@ namespace MonedaCubana.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Persona()
         {
-            Usuarios = new List<Usuario>();
+            Usuario = new List<Usuario>();
         }
 
         [Key]
@@ -61,7 +61,7 @@ namespace MonedaCubana.Models
         public virtual Telefono_Persona Telefono_Persona { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
 
         public virtual Profesor Profesor { get; set; }
 

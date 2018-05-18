@@ -26,7 +26,7 @@
         public virtual DbSet<Taller> Taller { get; set; }
         public virtual DbSet<Telefono_Persona> Telefono_Persona { get; set; }
         public virtual DbSet<Trabajador> Trabajador { get; set; }
-        public virtual DbSet<Ubicación> Ubicacion { get; set; }
+        public virtual DbSet<Ubicación> Ubicación { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -66,9 +66,14 @@
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Grupo>()
-                .HasMany(e => e.Profesors)
-                .WithMany(e => e.Grupoes)
-                .Map(m => m.ToTable("Grupo_Profesor").MapLeftKey("Nombre").MapRightKey("CI"));
+                .HasMany(e => e.Registro)
+                .WithOptional(e => e.Grupo)
+                .HasForeignKey(e => e.Nombre);
+
+            modelBuilder.Entity<Grupo>()
+                .HasMany(e => e.Profesor)
+                .WithMany(e => e.Grupo)
+                .Map(m => m.ToTable("Grupo_Profesor").MapLeftKey("NombreGrupo").MapRightKey("CI"));
 
             modelBuilder.Entity<Persona>()
                 .Property(e => e.Raza)
@@ -89,7 +94,7 @@
                 .WithRequired(e => e.Persona);
 
             modelBuilder.Entity<Persona>()
-                .HasMany(e => e.Usuarios)
+                .HasMany(e => e.Usuario)
                 .WithRequired(e => e.Persona)
                 .WillCascadeOnDelete(false);
 
