@@ -11,8 +11,8 @@ namespace MonedaCubana.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Programa_Entrenamiento()
         {
-            Grupoes = new List<Grupo>();
-            Tallers = new List<Taller>();
+            Grupo = new List<Grupo>();
+            Taller = new List<Taller>();
         }
 
         [Key]
@@ -24,9 +24,9 @@ namespace MonedaCubana.Models
         public string Plan_Curricular { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grupo> Grupoes { get; set; }
+        public virtual ICollection<Grupo> Grupo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Taller> Tallers { get; set; }
+        public virtual ICollection<Taller> Taller { get; set; }
     }
 }

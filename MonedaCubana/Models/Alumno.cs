@@ -39,7 +39,7 @@ namespace MonedaCubana.Models
         public byte[] Foto { get; set; }
 
         [StringLength(20)]
-        public string Nombre { get; set; }
+        public string NombreGrupo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Asignatura_Alumno> Asignatura_Alumno { get; set; }

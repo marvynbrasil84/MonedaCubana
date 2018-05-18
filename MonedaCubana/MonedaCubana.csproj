@@ -251,11 +251,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Alumno\Create.cshtml" />
-    <Content Include="Views\Alumno\Delete.cshtml" />
-    <Content Include="Views\Alumno\Details.cshtml" />
-    <Content Include="Views\Alumno\Edit.cshtml" />
-    <Content Include="Views\Alumno\Index.cshtml" />
     <Content Include="Views\Trabajador\Create.cshtml" />
     <Content Include="Views\Trabajador\Delete.cshtml" />
     <Content Include="Views\Trabajador\Details.cshtml" />
