@@ -16,7 +16,7 @@ namespace MonedaCubana.Controllers
         // GET: General
         public ActionResult Index()
         {
-            ViewBag.Talleres = ctrTaller.Lista_Nombres_Talleres();
+            ViewBag.Talleres = ctrTaller.ListaTaller();
             ViewBag.Cursos = ctrCurso.Nombre_Curso_Entrenamiento();
             return View(ctrPersonal.ObtenerProfesores());
         }

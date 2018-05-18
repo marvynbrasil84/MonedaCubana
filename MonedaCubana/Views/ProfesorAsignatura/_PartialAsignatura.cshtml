@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MonedaCubana.Models.Taller>
+
+
+
+<table class="display tableDesign" id="profesorasignatura">
+    <thead>
+        <tr>
+            <th>
+                Nombre Profesor
+            </th>
+            @*<th>
+                    Categoria Docente
+                </th>
+                <th>
+                    Categoria Científica
+                </th>*@
+            <th>
+                Asociar Asociar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Categoria_Docente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
+                    </td>*@
+                <td>
+                    <input type="checkbox" class="asociar" />
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
