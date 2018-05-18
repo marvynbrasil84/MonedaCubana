@@ -1,9 +1,15 @@
-﻿$(document).ready(function () {
-    Visualizar();
+﻿var pos = 0;
+$(".asociar").click(function () {
+   
+    if (pos == 0)
+        setTimeout(function () {
+            Visualizar1();
+        }, 1000)
+    pos = pos + 1;
     
 });
 
-function Visualizar(/*pObjet*/) {
+function Visualizar1(/*pObjet*/) {
     try {
         //var _dataSet = new Array();
         //var aux = JSON.parse(JSON.stringify(pObjet));
