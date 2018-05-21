@@ -10,11 +10,11 @@ namespace MonedaCubana.Models
     {
         public int ID { get; set; }
 
+        [Required]
         public long CI { get; set; }
 
         [Required]
-        [StringLength(30)]
-        public string Nombre { get; set; }
+        public int TallerID { get; set; }/*Nombre { get; set; }*/
 
         public virtual Profesor Profesor { get; set; }
 

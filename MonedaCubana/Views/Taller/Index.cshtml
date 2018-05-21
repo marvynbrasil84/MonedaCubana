@@ -14,7 +14,7 @@
 <table class="display tableDesign" id="Taller">
     <thead>
         <tr>
-            <th>Sel.</th>
+            @*<th>Sel.</th>*@
             <th>Eliminar</th>
             <th>
                 Plan Curricular
@@ -32,14 +32,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td style="text-align:center">
+                @*<td style="text-align:center">*@
                     @*<i class="fa fa-edit"></i>*@
-                    @Html.ActionLink(" ", "Edit", new { id = item.Nombre }, new { @class = "fa fa-edit", style = "margin-bottom:1em" })
+                    @*@Html.ActionLink(" ", "Edit", new { id = item.TallerID }, new { @class = "fa fa-edit", style = "margin-bottom:1em" })*@
                     
-                </td>
+                @*</td>*@
                 <td style="text-align:center">
                     @*<i class="fa fa-close"></i>*@
-                    <i class="fa fa-close" data-tipo="borrar" data-nombre="@item.Nombre"></i>
+                    <i class="fa fa-close" data-tipo="borrar" data-id=@item.TallerID></i>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Programa_Entrenamiento.Plan_Curricular)

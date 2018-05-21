@@ -25,6 +25,19 @@ namespace MonedaCubana.Services
                 return new List<Asignatura_Profesor>();
             }
         }
+
+        public bool Asignar_Profesor_Asignatura(string asignatura)
+        {
+            try
+            {
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 
 }

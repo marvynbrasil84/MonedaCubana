@@ -238,10 +238,10 @@ function Visualizar(/*pObjet*/) {
 }
 
 $(".fa-close").click(function () {
-    var Nombre = $(this).attr("data-nombre");
+    var ID = $(this).attr("data-id");
 
     var taller = {
-        Nombre: Nombre
+        ID: ID
     };
 
 
