@@ -37,6 +37,7 @@ namespace MonedaCubana
                           "~/Content/subpaginas.css",
                           "~/Content/font-awesome-4.7.0/css/font-awesome.min.css",
                           "~/css/sweetalert.css",
+                          "~/css/cssGenerico.css",
                       "~/Content/site.css"));
         }
     }

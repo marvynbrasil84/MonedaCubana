@@ -13,7 +13,7 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Nombre </label>
         <div class="col-md-3">
-            <input type="text" id="Nombre" class="form-control" value="@ViewBag.Taller.Nombre" disabled="disabled" />
+            <input type="text" id="Nombre" class="form-control" value="@ViewBag.Taller.Nombre" @*disabled="disabled"*@ />
 
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Período </label>
@@ -48,11 +48,10 @@
         <script src="~/res/jsTaller.js"></script>
 
         <script>
-            $(document).ready(function ()
-            {
+            $(document).ready(function () {
                 var periodo = "2018-2019";//"@ViewBag.Taller.Periodo";
-                
+
                 $("#cboTaller").val(periodo);
-            }
+            });
         </script>
     }

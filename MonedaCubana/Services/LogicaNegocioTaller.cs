@@ -40,11 +40,11 @@ namespace MonedaCubana.Services
             }
         }
 
-        public Taller ObtenerTaller_Nombre(String nombre)
+        public Taller ObtenerTaller_Nombre(int id)
         {
             try
             {
-                return db.Taller.Find(nombre);
+                return db.Taller.Find(id);
             }
             catch (Exception ex)
             {
@@ -70,14 +70,14 @@ namespace MonedaCubana.Services
             
         }
 
-        public bool Eliminar(String nombre)
+        public bool Eliminar(int ID)
         {
             try
             {
                // using (ApplicationDBContext db = new ApplicationDBContext())
                 {
                     //db.Entry(t).State = System.Data.Entity.EntityState.Deleted;
-                    Taller t = db.Taller.Find(nombre);
+                    Taller t = db.Taller.Find(ID);
                     db.Taller.Remove(t);
                     db.SaveChanges();
                     return true;

@@ -15,8 +15,8 @@ namespace MonedaCubana.Models
             Asignatura_Alumno = new List<Asignatura_Alumno>();
             Asignatura_Profesor = new List<Asignatura_Profesor>();
         }
-
-        [Key]
+        public int TallerID { get; set; }
+        //[Key]
         [StringLength(30)]
         public string Nombre { get; set; }
 

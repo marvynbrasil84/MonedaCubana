@@ -57,12 +57,12 @@ namespace MonedaCubana.Controllers
 
         [WebMethod]
         //[ValidateAntiForgeryToken]
-        public JsonResult Eliminar(int CI)
+        public JsonResult Eliminar(long id)
 
         {
             if (ModelState.IsValid)
             {
-                bool resultado = ctr.EliminarProfesor(CI);
+                bool resultado = ctr.EliminarProfesor(id);
                 return Json(new { data = resultado });
             }
             return Json(new { data = false });

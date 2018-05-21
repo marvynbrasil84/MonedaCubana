@@ -25,30 +25,17 @@ namespace MonedaCubana.Services
                 return new List<Asignatura_Profesor>();
             }
         }
-        public List<PruebaAsociacion> TalleresporProfesor(long CI)
+
+        public bool Asignar_Profesor_Asignatura(string asignatura)
         {
             try
             {
-                using (ApplicationDBContext db = new ApplicationDBContext())
-                {
 
-                    var result = db.Taller.GroupJoin(db.Asignatura_Profesor, 
-                        o => o.Nombre, 
-                        y => y.Nombre, 
-                        (o, y) =>new PruebaAsociacion
-                        {
-                            Nombre = o.Nombre,
-                            Posee = y.First(e=>e.CI==CI)==null ? "N" : "S"
-                        }
-                        ).ToList();
-
-
-                    return result;
-                }
+                return true;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                return new List<PruebaAsociacion>();
+                return false;
             }
         }
     }

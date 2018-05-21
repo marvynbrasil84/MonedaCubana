@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<MonedaCubana.Models.Profesor>
 @{
     List<MonedaCubana.Models.Taller> CountryList =ViewBag.Talleres;
+    
 }
 @{
     ViewBag.Title = "Index";
@@ -9,43 +10,26 @@
 
 <h2>Profesor-Asignatura</h2>
 
-@*<p>
-        @Html.ActionLink("Nuevo", "Create", "Controller", new { @class = "btn btn-info", style="margin-bottom:1em"})
-    </p>*@
-<div class="form-group">
-    @*<label class="control-label col-md-2"> Cursos </label>
+
+@*<div class="form-group">
+
+    <label class="control-label col-md-2 col-md-offset-2"> Talleres </label>
         <div class="col-md-3">
 
-            <select id="Curso" class="form-control">
-                @foreach (var stud in @ViewBag.Cursos)
-                {
+             <select id="Taller" class="form-control">
+                 @foreach (var stud in @ViewBag.Talleres)
+                 {
 
-                    <option value=@stud>@stud</option>
+                     <option value=@stud>@stud</option>
 
-                }
-            </select>
+                 }
+             </select>
 
-        </div>*@
-    <label class="control-label col-md-2 col-md-offset-2"> Talleres </label>
-    <div class="col-md-3">
-
-        <select id="Taller" class="form-control">
-            @foreach (var stud in @ViewBag.Talleres)
-            {
-
-                <option value=@stud>@stud</option>
-
-            }
-        </select>
-
-    </div>
-</div>
+         </div>
+    </div>*@
 <table class="display tableDesign" id="profesorasignatura">
     <thead>
         <tr>
-            <th>
-               CI
-            </th>
             <th>
                 Nombre Profesor
             </th>
@@ -63,9 +47,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-                <td>
-                    @Html.DisplayFor(modelItem => item.Persona.CI)
-                </td>
+            <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Persona.Nombre)
                 </td>
@@ -76,19 +58,18 @@
                     @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
                 </td>
                 <td>
-                    <input type="button" class="asociar" data-toggle="modal" data-target="#ModalTipoArchivo" />
+                    <input type="button" class="asociar" data-toggle="modal" data-target="#ModalTipoArchivo" data-tipo=@item.CI />
                 </td>
             </tr>
         }
     </tbody>
 
 </table>
-<input type="text" id="CI" hidden />
 <div class="modal fade" id="ModalTipoArchivo" tabindex="-1" @*role="dialog" data-accion="" data-backdrop="static" data-keyboard="false"*@>
     <div class="modal-dialog" role="document" style="width:70%">
         <div class="modal-content">
-            <div id="contentTaller" class="modal-body">
-                @*@Html.Partial("~/Views/profesorasignatura/_PartialAsignatura.cshtml", CountryList)*@
+            <div id="contentModalTipoArchivo" class="modal-body">
+                @Html.Partial("~/Views/profesorasignatura/_PartialAsignatura.cshtml", CountryList)
             </div>
             <div class="modal-footer">
 
@@ -96,10 +77,22 @@
         </div>
     </div>
 </div>
+
+<div id="divProcesando" class="tableProcesando" style="position:fixed; top:50%; left:50%;">
+    <table border="0" class="tablaAtajos" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="padding:10px;">
+                <asp:Image ID="imgProgress" runat="server" ImageUrl="../../Imagenes/cargando.gif" />
+                <asp:Label ID="lblProcesa" runat="server"
+                                                                                                          Text="Procesando..." CssClass="GeneralItems"></asp:Label>
+            </td>
+        </tr>
+    </table>
+</div>
+
 @section Scripts {
 
     @Scripts.Render("~/bundles/jqueryval")
-    @*<script src="~/res/jsProfesorAsignatura.js"></script>*@
     <script src="~/res/jsProfesorAsignatura.js"></script>
-
+    
 }

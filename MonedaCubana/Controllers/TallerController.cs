@@ -20,7 +20,7 @@ namespace MonedaCubana.Controllers
         }
 
         //GET: Trabajador/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
@@ -65,9 +65,9 @@ namespace MonedaCubana.Controllers
         }
 
         [WebMethod]
-        public JsonResult Eliminar(String nombre)
+        public JsonResult Eliminar(int ID)
         {
-            bool resultado = ctrTaller.Eliminar(nombre);
+            bool resultado = ctrTaller.Eliminar(ID);
             return Json(new { data = resultado });
         }
 

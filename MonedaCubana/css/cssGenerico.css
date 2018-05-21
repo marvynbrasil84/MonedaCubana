@@ -8,3 +8,11 @@
     text-decoration: underline;
 }*/
 
+.tableProcesando {
+    border-style: double;
+    border-color: #89A02C;
+}
+
+.tablaAtajos {
+    background-color: #FFFFFF;
+}

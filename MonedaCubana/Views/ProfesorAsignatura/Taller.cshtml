@@ -1,12 +1,10 @@
 ﻿@model IEnumerable<MonedaCubana.Models.Taller>
 
-
-
-<table class="display tableDesign" id="taller">
+<table class="display tableDesign" id="profesorasignaturaPartial">
     <thead>
         <tr>
             <th>
-                Nombre Profesor
+                Nombre Taller
             </th>
             @*<th>
                     Categoria Docente
@@ -24,6 +22,7 @@
         {
             <tr>
                 <td>
+                                       
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
                 @*<td>
@@ -33,13 +32,22 @@
                         @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
                     </td>*@
                 <td>
-                    <input type="checkbox" class="asociar" />
+                    <input type="checkbox" class="asociarPartial" data-tipo=@item.TallerID/>
                 </td>
             </tr>
         }
     </tbody>
 
 </table>
+
+
+
+@*<div class="row">
+    
+    <div class="col-md-6">
+        <input type="button" id="btnAsignar" class="right btn btn-info" value="Asignar" />
+    </div>
+</div>*@
 
     
 

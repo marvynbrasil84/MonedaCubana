@@ -272,7 +272,7 @@ $(".fa-close").click(function () {
     var CI = $(this).attr("data-ci");
 
     var trabajador = {
-        CI: CI
+        ID: CI
     };
 
 

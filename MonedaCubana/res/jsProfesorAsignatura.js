@@ -1,42 +1,15 @@
-﻿var tabla_profesores;
+﻿var ci_profesor;
 $(document).ready(function () {
-   
-   
-       
-            Visualizar();
-            Inicializar_Eventos();
-    
+    Visualizar();
 });
 
-function Visualizar(/*pObjet*/) {
+function Visualizar() {
     try {
-        //var _dataSet = new Array();
-        //var aux = JSON.parse(JSON.stringify(pObjet));
-        //if (pObjet != '') {
-        //    $.each(aux, function (idx, obj) {
-
-        //        Aprobar = "<i class= 'fa fa-square-o sel iconh' > </i>";
-
-        //        //_dataSet[idx] = [Aprobar, obj.ACTCOD, obj.ACTDPT, obj.ACTOB1, obj.ACTMAR, obj.ACTMOD, obj.ACTSER, obj.ACTREF, obj.ACTAMT, obj.ACTSEC, obj.ACTCTR, obj.ACTACC];
-        //    });
-        //}
+        
 
 
-        tabla_profesores= $("#profesorasignatura").dataTable({
-            //"data": _dataSet,
-            //"bProcessing": true,
-            //"sScrollY": 250,
-            //"sScrollX": true,
-            //"bInfo": true,
-            //"sInfoEmpty": false,
-            //"bFilter": false,
-            //"bSort": null,
-            //"bAutoCss": true,
-            //"bCollapse": true,
-            //"bInfinite": true,
-            //"bDestroy": true,
-            //"bAutoWidth": false,
-            //"pagingType": "simple",
+        $("#profesorasignatura").dataTable({
+            
             "language": {
                 "url": "dataTables.german.lang",
                 "decimal": ".",
@@ -69,7 +42,6 @@ function Visualizar(/*pObjet*/) {
                 "bSmart": true
             }
         });
-        
 
     }
     catch (ex) {
@@ -78,19 +50,150 @@ function Visualizar(/*pObjet*/) {
 
 }
 
-function Inicializar_Eventos() {
-    $(document).on("click", ".asociar", function (evento) {
-        var row = tabla_profesores.row($(this).parents('tr'));
 
-        $("#CI").val(row.data()["CI"]);
-        ModalTaller();
-    })
-}
-function ModalSeguimientoActividades () {
-    $.post( "/ProfesorAsignatura/Taller").done(function (data) {
-        $("#contentTaller").html(data);
-    }).fail(function () {
-        Rutina_MuestraMensaje("Ocurrió un error vuelva a intentar la operación");
-    });
+function Visualizar1() {
+    try {
+
+
+
+        $("#profesorasignaturaPartial").dataTable({
+
+            "language": {
+                "url": "dataTables.german.lang",
+                "decimal": ".",
+                "thousands": ","
+            },
+            "oLanguage": {
+
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente >>",
+                    "sPrevious": "<< Anterior"
+                }
+            },
+            "oSearch": {
+                "sSearch": "",
+                "bRegex": false,
+                "bSmart": true
+            }
+        });
+
+    }
+    catch (ex) {
+        console.log(ex.message);
+    }
 
 }
+
+$(".asociarPartial").click(function ()
+{
+    var asignatura = $(this).attr("data-tipo");
+    var datos = {
+        CI: asignatura,
+        TallerID:ci_profesor
+    };
+
+
+    try {
+
+        jQuery.ajax({
+            type: "POST",
+            url: "/ProfesorAsignatura/Asignar",
+            data: JSON.stringify(datos),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            beforeSend: function (xhr) {
+                $("#divProcesando").show();
+
+            },
+            success: function (dato) {
+
+                if (dato.data) {
+                    location.href = "/Profesor/Index";
+                }
+            },
+            failure: function (msg) {
+                console.log(msg.description);
+            },
+            error: function (xhr, err) {
+                console.log("ESTADO---->>>  " + xhr.status + "\n" + "xhr.responseText---->>>  " + xhr.responseText, "\n" + "ERR---->>>  " + err);
+            },
+            complete: function (xhr, com) {
+                $("#divProcesando").hide();
+            }
+        });
+
+    }
+
+    catch (ex) {
+        console.log(ex.message);
+    }
+});
+
+
+$(".asociar").click(function () {
+    ci_profesor = $(this).attr("data-tipo");
+
+    var asignatura = $(this).attr("data-tipo");
+    var datos = {
+        CI: asignatura,
+       
+    };
+
+
+    try {
+
+        jQuery.ajax({
+            type: "POST",
+            url: "/ProfesorAsignatura/TalleresporProfesor",
+            data: JSON.stringify(datos),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            beforeSend: function (xhr) {
+                $("#divProcesando").show();
+
+            },
+            success: function (dato) {
+                //todo:
+                Visualizar1();
+            },
+            failure: function (msg) {
+                console.log(msg.description);
+            },
+            error: function (xhr, err) {
+                console.log("ESTADO---->>>  " + xhr.status + "\n" + "xhr.responseText---->>>  " + xhr.responseText, "\n" + "ERR---->>>  " + err);
+            },
+            complete: function (xhr, com) {
+                $("#divProcesando").hide();
+            }
+        });
+
+    }
+
+    catch (ex) {
+        console.log(ex.message);
+    }
+   
+});
+
+//$("btnAsignar").click(function () {
+
+
+//});
+
+

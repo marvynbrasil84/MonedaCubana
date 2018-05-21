@@ -177,7 +177,7 @@ namespace MonedaCubana.Services
             }
         }
 
-        public bool EliminarProfesor(int ID)
+        public bool EliminarProfesor(long ID)
         {
 
             try

@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfesorAsignaturaController.cs" />
     <Compile Include="Controllers\ProfesorController.cs" />
@@ -159,6 +160,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805200218211_Cambios LLave Taller.cs" />
+    <Compile Include="Migrations\201805200218211_Cambios LLave Taller.Designer.cs">
+      <DependentUpon>201805200218211_Cambios LLave Taller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alumno.cs" />
     <Compile Include="Models\Alumno_Preparatoria.cs" />
     <Compile Include="Models\ApplicationDBContext.cs" />
@@ -193,6 +199,7 @@
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery.dataTables.min.css" />
     <Content Include="Content\subpaginas.css" />
+    <Content Include="css\cssGenerico.css" />
     <Content Include="css\jquery-ui.css" />
     <Content Include="css\jquery.dataTables.min.css" />
     <Content Include="css\sweetalert.css" />
@@ -201,6 +208,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\cargando.gif" />
     <Content Include="res\jsAsociarTaller.js" />
     <Content Include="res\jsGenerico.js" />
     <Content Include="res\jsPlanEntrenamiento.js" />
@@ -269,6 +277,12 @@
     <Content Include="Views\Profesor\Edit.cshtml" />
     <Content Include="Views\ProfesorAsignatura\Index.cshtml" />
     <Content Include="Views\Taller\Edit.cshtml" />
+    <Content Include="Views\ProfesorAsignatura\_PartialAsignatura.cshtml" />
+    <Content Include="Views\Alumno\Create.cshtml" />
+    <Content Include="Views\Alumno\Delete.cshtml" />
+    <Content Include="Views\Alumno\Details.cshtml" />
+    <Content Include="Views\Alumno\Edit.cshtml" />
+    <Content Include="Views\Alumno\Index.cshtml" />
     <Content Include="Views\ProfesorAsignatura\Taller.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -289,6 +303,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805200218211_Cambios LLave Taller.resx">
+      <DependentUpon>201805200218211_Cambios LLave Taller.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

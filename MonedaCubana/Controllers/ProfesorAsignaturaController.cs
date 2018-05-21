@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Services;
 using MonedaCubana.Services;
+using MonedaCubana.Models;
+using System.Web.Services;
 
 namespace MonedaCubana.Controllers
 {
@@ -13,7 +15,7 @@ namespace MonedaCubana.Controllers
         private LogicaNegocioProfesorAsignatura ctr = new LogicaNegocioProfesorAsignatura();
         private LogicaNegocioPersonal ctrPersonal = new LogicaNegocioPersonal();
         private LogicaNegocioTaller ctrTaller = new LogicaNegocioTaller();
-        private LogicaNegocioPlanEntrenamiento ctrCurso = new LogicaNegocioPlanEntrenamiento();
+        //private LogicaNegocioPlanEntrenamiento ctrCurso = new LogicaNegocioPlanEntrenamiento();
         // GET: General
         public ActionResult Index()
         {
@@ -21,6 +23,19 @@ namespace MonedaCubana.Controllers
             //ViewBag.Cursos = ctrCurso.Nombre_Curso_Entrenamiento();
             return View(ctrPersonal.ObtenerProfesores());
         }
+        [WebMethod]
+        public ActionResult Asignar(int CI, int TallerID/*[Bind(Include = "CI,TallerID")] Asignatura_Profesor asignacion*/)
+        {
+            return View();
+        }
+
+        [WebMethod]
+        public ActionResult TalleresporProfesor(int CI)
+        {
+            var lista = new List<Taller>();
+            return PartialView("Direccion", lista);
+        }
+
         public ActionResult Taller()
         {
             return View();

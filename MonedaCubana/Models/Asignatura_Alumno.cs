@@ -15,8 +15,7 @@ namespace MonedaCubana.Models
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(30)]
-        public string Nombre { get; set; }
+        public int TallerID { get; set; }/*Nombre { get; set; }*/
 
         [StringLength(30)]
         public string Descripcion { get; set; }
