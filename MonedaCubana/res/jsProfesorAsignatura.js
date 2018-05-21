@@ -150,7 +150,7 @@ $(".asociar").click(function () {
 
     var asignatura = $(this).attr("data-tipo");
     var datos = {
-        CI: asignatura,
+        CI: ci_profesor,
        
     };
 
@@ -162,7 +162,7 @@ $(".asociar").click(function () {
             url: "/ProfesorAsignatura/TalleresporProfesor",
             data: JSON.stringify(datos),
             contentType: "application/json; charset=utf-8",
-            dataType: "json",
+            //dataType: "json",
             cache: false,
             beforeSend: function (xhr) {
                 $("#divProcesando").show();
@@ -170,7 +170,8 @@ $(".asociar").click(function () {
             },
             success: function (dato) {
                 //todo:
-                Visualizar1();
+                $("#contentModalTipoArchivo").html(dato);
+                //Visualizar1();
             },
             failure: function (msg) {
                 console.log(msg.description);

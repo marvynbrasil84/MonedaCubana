@@ -29,10 +29,10 @@ namespace MonedaCubana.Controllers
         }
 
         [WebMethod]
-        public ActionResult TalleresporProfesor(int CI)
+        public ActionResult TalleresporProfesor(long CI)
         {
             var lista = new List<Taller>();
-            return PartialView("Direccion", lista);
+            return PartialView("_PartialAsignatura", lista);
         }
 
     }
