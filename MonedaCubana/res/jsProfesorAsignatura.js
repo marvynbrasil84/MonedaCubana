@@ -1,15 +1,14 @@
-﻿var pos = 0;
-$(".asociar").click(function () {
+﻿var tabla_profesores;
+$(document).ready(function () {
    
-    if (pos == 0)
-        setTimeout(function () {
-            Visualizar1();
-        }, 1000)
-    pos = pos + 1;
+   
+       
+            Visualizar();
+            Inicializar_Eventos();
     
 });
 
-function Visualizar1(/*pObjet*/) {
+function Visualizar(/*pObjet*/) {
     try {
         //var _dataSet = new Array();
         //var aux = JSON.parse(JSON.stringify(pObjet));
@@ -23,7 +22,7 @@ function Visualizar1(/*pObjet*/) {
         //}
 
 
-        $("#profesorasignatura").dataTable({
+        tabla_profesores= $("#profesorasignatura").dataTable({
             //"data": _dataSet,
             //"bProcessing": true,
             //"sScrollY": 250,
@@ -70,10 +69,28 @@ function Visualizar1(/*pObjet*/) {
                 "bSmart": true
             }
         });
+        
 
     }
     catch (ex) {
         console.log(ex.message);
     }
+
+}
+
+function Inicializar_Eventos() {
+    $(document).on("click", ".asociar", function (evento) {
+        var row = tabla_profesores.row($(this).parents('tr'));
+
+        $("#CI").val(row.data()["CI"]);
+        ModalTaller();
+    })
+}
+function ModalSeguimientoActividades () {
+    $.post( "/ProfesorAsignatura/Taller").done(function (data) {
+        $("#contentTaller").html(data);
+    }).fail(function () {
+        Rutina_MuestraMensaje("Ocurrió un error vuelva a intentar la operación");
+    });
 
 }

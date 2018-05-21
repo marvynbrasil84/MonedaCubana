@@ -170,6 +170,7 @@
     <Compile Include="Models\Preparatoria.cs" />
     <Compile Include="Models\Profesor.cs" />
     <Compile Include="Models\Programa_Entrenamiento.cs" />
+    <Compile Include="Models\PruebaAsociacion.cs" />
     <Compile Include="Models\Registro.cs" />
     <Compile Include="Models\Taller.cs" />
     <Compile Include="Models\Telefono_Persona.cs" />
@@ -200,6 +201,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="res\jsAsociarTaller.js" />
     <Content Include="res\jsGenerico.js" />
     <Content Include="res\jsPlanEntrenamiento.js" />
     <Content Include="res\jsProfesor.js" />
@@ -267,7 +269,7 @@
     <Content Include="Views\Profesor\Edit.cshtml" />
     <Content Include="Views\ProfesorAsignatura\Index.cshtml" />
     <Content Include="Views\Taller\Edit.cshtml" />
-    <Content Include="Views\ProfesorAsignatura\_PartialAsignatura.cshtml" />
+    <Content Include="Views\ProfesorAsignatura\Taller.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

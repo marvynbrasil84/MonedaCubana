@@ -44,6 +44,9 @@
     <thead>
         <tr>
             <th>
+               CI
+            </th>
+            <th>
                 Nombre Profesor
             </th>
             <th>
@@ -60,7 +63,9 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.CI)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Persona.Nombre)
                 </td>
@@ -78,11 +83,12 @@
     </tbody>
 
 </table>
+<input type="text" id="CI" hidden />
 <div class="modal fade" id="ModalTipoArchivo" tabindex="-1" @*role="dialog" data-accion="" data-backdrop="static" data-keyboard="false"*@>
     <div class="modal-dialog" role="document" style="width:70%">
         <div class="modal-content">
-            <div id="contentModalTipoArchivo" class="modal-body">
-                @Html.Partial("~/Views/profesorasignatura/_PartialAsignatura.cshtml", CountryList)
+            <div id="contentTaller" class="modal-body">
+                @*@Html.Partial("~/Views/profesorasignatura/_PartialAsignatura.cshtml", CountryList)*@
             </div>
             <div class="modal-footer">
 
@@ -93,7 +99,7 @@
 @section Scripts {
 
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/res/jsProfesorAsignatura.js"></script>
+    @*<script src="~/res/jsProfesorAsignatura.js"></script>*@
     <script src="~/res/jsProfesorAsignatura.js"></script>
 
 }
