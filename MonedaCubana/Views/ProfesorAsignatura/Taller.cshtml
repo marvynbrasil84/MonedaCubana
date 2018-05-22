@@ -12,8 +12,8 @@
                 <th>
                     Categoria Científica
                 </th>*@
-            <th>
-                Asociar Asociar
+            <th style="text-align:center">
+               Profesor Imparte
             </th>
         </tr>
     </thead>
@@ -31,9 +31,20 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
                     </td>*@
-                <td>
-                   @* <input type="checkbox" class="asociarPartial" data-tipo=@item.TallerID />*@
-                    @Html.DisplayFor(modelItem => item.Posee)
+                <td style="text-align:center">
+                    @* <input type="checkbox" class="asociarPartial" data-tipo=@item.TallerID />*@
+                    @*@Html.DisplayFor(modelItem => item.Posee)*@
+                    @{
+                        if (item.Posee == "S")
+                        {
+                                <input type="checkbox" class="asociarPartial" checked />
+                        }
+                        else
+                        {
+                            <input type = "checkbox" class="asociarPartial"  />
+                        }
+
+                    }
                 </td>
             </tr>
         }
