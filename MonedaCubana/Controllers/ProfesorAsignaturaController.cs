@@ -30,24 +30,25 @@ namespace MonedaCubana.Controllers
         }
 
         [WebMethod]
-        public ActionResult TalleresporProfesor(int CI)
+        public ActionResult TalleresporProfesor(long CI)
         {
-            var lista = new List<Taller>();
-            return PartialView("Direccion", lista);
+           // var lista = new List<Taller>();
+            var result = ctr.TalleresporProfesor(CI);
+            return PartialView("Taller", result);
         }
 
         public ActionResult Taller()
         {
             return View();
         }
-        [WebMethod]
-        public JsonResult TalleresporProfesor()
-        {
-            var lista = ctrTaller.ListaTaller();
+        //[WebMethod]
+        //public JsonResult TalleresporProfesor()
+        //{
+        //    var lista = ctrTaller.ListaTaller();
 
 
-            return Json(lista);
-        }
+        //    return Json(lista);
+        //}
 
     }
 }

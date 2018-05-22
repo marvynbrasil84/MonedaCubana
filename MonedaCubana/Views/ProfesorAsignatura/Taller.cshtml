@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MonedaCubana.Models.Taller>
+﻿@model IEnumerable<MonedaCubana.Models.PruebaAsociacion>
 
 <table class="display tableDesign" id="profesorasignaturaPartial">
     <thead>
@@ -32,7 +32,8 @@
                         @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
                     </td>*@
                 <td>
-                    <input type="checkbox" class="asociarPartial" data-tipo=@item.TallerID/>
+                   @* <input type="checkbox" class="asociarPartial" data-tipo=@item.TallerID />*@
+                    @Html.DisplayFor(modelItem => item.Posee)
                 </td>
             </tr>
         }

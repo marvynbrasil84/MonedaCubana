@@ -38,6 +38,32 @@ namespace MonedaCubana.Services
                 return false;
             }
         }
+        public List<PruebaAsociacion> TalleresporProfesor(long CI)
+        {
+            try
+            {
+                using (ApplicationDBContext db = new ApplicationDBContext())
+                {
+
+                    var result = db.Taller.GroupJoin(db.Asignatura_Profesor,
+                        o => o.TallerID,
+                        y => y.TallerID,
+                        (o, y) => new PruebaAsociacion
+                        {
+                            Nombre = o.Nombre,
+                            Posee = y.FirstOrDefault(e => e.CI == CI) == null ? "N" : "S"
+                        }
+                        ).ToList();
+
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                return new List<PruebaAsociacion>();
+            }
+        }
     }
 
 }
