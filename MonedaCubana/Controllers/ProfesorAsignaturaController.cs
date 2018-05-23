@@ -24,8 +24,9 @@ namespace MonedaCubana.Controllers
             return View(ctrPersonal.ObtenerProfesores());
         }
         [WebMethod]
-        public ActionResult Asignar(long CI, int TallerID/*[Bind(Include = "CI,TallerID")] Asignatura_Profesor asignacion*/)
+        public ActionResult Asignar(/*long CI, int TallerID*/[Bind(Include = "CI,TallerID")] Asignatura_Profesor asignacion, string accion)
         {
+            ctr.Asignar_Profesor_Asignatura(asignacion, accion);
             return View();
         }
 

@@ -26,11 +26,30 @@ namespace MonedaCubana.Services
             }
         }
 
-        public bool Asignar_Profesor_Asignatura(string asignatura)
+        public bool Asignar_Profesor_Asignatura(Asignatura_Profesor asignacion, string accion)
         {
             try
             {
+                if (accion == "I")
+                {
+                    using (ApplicationDBContext db = new ApplicationDBContext())
+                    {
+                        db.Asignatura_Profesor.Add(asignacion);
+                        db.SaveChanges();
+                    }
+                }
+                else
+                    if (accion == "B")
+                {
 
+                    using (ApplicationDBContext db = new ApplicationDBContext())
+                    {
+                        Asignatura_Profesor asignacionSel = db.Asignatura_Profesor.Find(asignacion.TallerID);
+                        db.Asignatura_Profesor.Remove(asignacionSel);
+                        db.SaveChanges();
+                    }
+                        
+                }
                 return true;
             }
             catch(Exception ex)

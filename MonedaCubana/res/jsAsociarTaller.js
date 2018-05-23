@@ -55,11 +55,22 @@ function Visualizar1() {
 function Inicializar_Eventos()
 {
     $(".asociarPartial").click(function () {
-        var asignatura = $(this).attr("data-tipo");
+        var sel;
+        var chk = $(this);
+        if (chk.is(':checked'))
+        {
+            sel = "I";
+        } else {
+            sel = "B";
+        }
+
+
+        var asignatura = chk.attr("data-tipo");
         console.log("Dio click");
         var datos = {
             CI: ci_profesor,
-            TallerID: asignatura
+            TallerID: asignatura,
+            accion: sel
         };
 
 
