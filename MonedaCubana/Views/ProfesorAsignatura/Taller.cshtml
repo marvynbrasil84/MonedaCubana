@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MonedaCubana.Models.PruebaAsociacion>
+﻿@model IEnumerable<MonedaCubana.Models.ProfesorAsociacionTaller>
 
 <table class="display tableDesign" id="profesorasignaturaPartial">
     <thead>
@@ -37,11 +37,11 @@
                     @{
                         if (item.Posee == "S")
                         {
-                                <input type="checkbox" class="asociarPartial" checked />
+                                <input type="checkbox" class="asociarPartial" checked data-tipo=@item.TallerID/>
                         }
                         else
                         {
-                            <input type = "checkbox" class="asociarPartial"  />
+                            <input type = "checkbox" class="asociarPartial" data-tipo=@item.TallerID />
                         }
 
                     }
@@ -60,6 +60,8 @@
         <input type="button" id="btnAsignar" class="right btn btn-info" value="Asignar" />
     </div>
 </div>*@
+
+<script src="~/res/jsAsociarTaller.js"></script>
 
     
 

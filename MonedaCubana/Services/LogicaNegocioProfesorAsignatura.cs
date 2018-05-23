@@ -38,7 +38,7 @@ namespace MonedaCubana.Services
                 return false;
             }
         }
-        public List<PruebaAsociacion> TalleresporProfesor(long CI)
+        public List<ProfesorAsociacionTaller> TalleresporProfesor(long CI)
         {
             try
             {
@@ -48,9 +48,10 @@ namespace MonedaCubana.Services
                     var result = db.Taller.GroupJoin(db.Asignatura_Profesor,
                         o => o.TallerID,
                         y => y.TallerID,
-                        (o, y) => new PruebaAsociacion
+                        (o, y) => new ProfesorAsociacionTaller
                         {
                             Nombre = o.Nombre,
+                            TallerID = o.TallerID,
                             Posee = y.FirstOrDefault(e => e.CI == CI) == null ? "N" : "S"
                         }
                         ).ToList();
@@ -61,7 +62,7 @@ namespace MonedaCubana.Services
             }
             catch (Exception ex)
             {
-                return new List<PruebaAsociacion>();
+                return new List<ProfesorAsociacionTaller>();
             }
         }
     }

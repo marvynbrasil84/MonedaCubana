@@ -6,13 +6,15 @@ using System.Data.Entity.Spatial;
 
 namespace MonedaCubana.Models
 {
-    public class PruebaAsociacion
+    public class ProfesorAsociacionTaller
     {
       
         [StringLength(30)]
         public string Nombre { get; set; }
 
-     
+        public int TallerID { get; set; }
+
+
         public string Posee { get; set; }
 
         

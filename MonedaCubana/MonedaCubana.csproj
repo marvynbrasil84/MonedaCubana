@@ -176,7 +176,7 @@
     <Compile Include="Models\Preparatoria.cs" />
     <Compile Include="Models\Profesor.cs" />
     <Compile Include="Models\Programa_Entrenamiento.cs" />
-    <Compile Include="Models\PruebaAsociacion.cs" />
+    <Compile Include="Models\ProfesorAsociacionTaller.cs" />
     <Compile Include="Models\Registro.cs" />
     <Compile Include="Models\Taller.cs" />
     <Compile Include="Models\Telefono_Persona.cs" />
@@ -277,7 +277,6 @@
     <Content Include="Views\Profesor\Edit.cshtml" />
     <Content Include="Views\ProfesorAsignatura\Index.cshtml" />
     <Content Include="Views\Taller\Edit.cshtml" />
-    <Content Include="Views\ProfesorAsignatura\_PartialAsignatura.cshtml" />
     <Content Include="Views\Alumno\Create.cshtml" />
     <Content Include="Views\Alumno\Delete.cshtml" />
     <Content Include="Views\Alumno\Details.cshtml" />
