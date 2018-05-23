@@ -44,7 +44,7 @@ namespace MonedaCubana.Services
 
                     using (ApplicationDBContext db = new ApplicationDBContext())
                     {
-                        Asignatura_Profesor asignacionSel = db.Asignatura_Profesor.Find(asignacion.TallerID);
+                        Asignatura_Profesor asignacionSel = db.Asignatura_Profesor.SingleOrDefault(x =>x.TallerID == asignacion.TallerID);
                         db.Asignatura_Profesor.Remove(asignacionSel);
                         db.SaveChanges();
                     }

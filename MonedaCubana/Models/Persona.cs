@@ -56,6 +56,24 @@ namespace MonedaCubana.Models
         [StringLength(100)]
         public string Nombre { get; set; }
 
+        [StringLength(100)]
+        public string Primer_Apellido { get; set; }
+
+        [StringLength(100)]
+        public string Segundo_Apellido { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime Fecha_Inicio_Contrato { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime Fecha_Fin_Contrato { get; set; }
+
+        public int Numero_Contrato { get; set; }
+
+        public string Provincia { get; set; }
+
+        public string Municipio { get; set; }
+
         public virtual Alumno Alumno { get; set; }
 
         public virtual Telefono_Persona Telefono_Persona { get; set; }

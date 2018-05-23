@@ -19,6 +19,10 @@ namespace MonedaCubana.Models
 
         public double Salario { get; set; }
 
+        int Annos_Experiencia { get; set; }
+
+        string Especialidad { get; set; }
+
         public virtual Persona Persona { get; set; }
     }
 }
