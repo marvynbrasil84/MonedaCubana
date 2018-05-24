@@ -8,7 +8,7 @@
     Layout = "~/Views/Shared/_LayoutSolution.cshtml";
 }
 
-<h2>Profesor-Asignatura</h2>
+<h2>Falicitador-Taller</h2>
 
 
 @*<div class="form-group">
@@ -31,7 +31,7 @@
     <thead>
         <tr>
             <th>
-                Nombre Profesor
+                Nombre Facilitador
             </th>
             <th>
                 Categoria Docente
@@ -40,7 +40,7 @@
                 Categoria Científica
             </th>
             <th style="text-align:center">
-                Asignar a Profesor
+                Asignar Talleres
             </th>
         </tr>
     </thead>
@@ -79,17 +79,7 @@
     </div>
 </div>
 
-<div id="divProcesando" class="tableProcesando" style="position:fixed; top:50%; left:50%;">
-    <table border="0" class="tablaAtajos" cellpadding="0" cellspacing="0">
-        <tr>
-            <td style="padding:10px;">
-                <asp:Image ID="imgProgress" runat="server" ImageUrl="../../Imagenes/cargando.gif" />
-                <asp:Label ID="lblProcesa" runat="server"
-                   Text="Procesando..." CssClass="GeneralItems"></asp:Label>
-            </td>
-        </tr>
-    </table>
-</div>
+
 
 @section Scripts {
 

@@ -151,9 +151,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlumnoController.cs" />
+    <Compile Include="Controllers\AlumnoGrupoController.cs" />
+    <Compile Include="Controllers\AlumnoTallerController.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
+    <Compile Include="Controllers\CursoGrupoController.cs" />
+    <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PreparatoriaController.cs" />
     <Compile Include="Controllers\ProfesorAsignaturaController.cs" />
     <Compile Include="Controllers\ProfesorController.cs" />
+    <Compile Include="Controllers\ProfesorGrupoController.cs" />
     <Compile Include="Controllers\Programa_EntrenamientoController.cs" />
     <Compile Include="Controllers\TallerController.cs" />
     <Compile Include="Controllers\TrabajadorController.cs" />
@@ -213,6 +220,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Imagenes\cargando.gif" />
+    <Content Include="Imagenes\logo.png" />
     <Content Include="res\jsAsociarTaller.js" />
     <Content Include="res\jsGenerico.js" />
     <Content Include="res\jsPlanEntrenamiento.js" />
@@ -287,10 +295,19 @@
     <Content Include="Views\Alumno\Edit.cshtml" />
     <Content Include="Views\Alumno\Index.cshtml" />
     <Content Include="Views\ProfesorAsignatura\Taller.cshtml" />
+    <Content Include="Views\Curso\Create.cshtml" />
+    <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Curso\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\font-awesome-4.7.0\fonts\" />
+    <Folder Include="Views\AlumnoGrupo\" />
+    <Folder Include="Views\AlumnoTaller\" />
+    <Folder Include="Views\CursoGrupo\" />
+    <Folder Include="Views\Grupo\" />
+    <Folder Include="Views\Preparatoria\" />
+    <Folder Include="Views\ProfesorGrupo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
