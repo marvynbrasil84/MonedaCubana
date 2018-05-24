@@ -298,6 +298,12 @@
     <Content Include="Views\Curso\Create.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\Curso\Edit.cshtml" />
+    <Content Include="Views\Grupo\Create.cshtml" />
+    <Content Include="Views\Grupo\Index.cshtml" />
+    <Content Include="Views\Grupo\Edit.cshtml" />
+    <Content Include="Views\Preparatoria\Index.cshtml" />
+    <Content Include="Views\Preparatoria\Create.cshtml" />
+    <Content Include="Views\Preparatoria\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,8 +311,6 @@
     <Folder Include="Views\AlumnoGrupo\" />
     <Folder Include="Views\AlumnoTaller\" />
     <Folder Include="Views\CursoGrupo\" />
-    <Folder Include="Views\Grupo\" />
-    <Folder Include="Views\Preparatoria\" />
     <Folder Include="Views\ProfesorGrupo\" />
   </ItemGroup>
   <ItemGroup>

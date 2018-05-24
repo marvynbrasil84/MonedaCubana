@@ -1,4 +1,4 @@
-﻿@model MonedaCubana.Models.Preparatoria
+﻿@model MonedaCubana.Models.Grupo
 
 @{
     ViewBag.Title = "Create";
@@ -14,24 +14,18 @@
     <hr />
 
     <div class="form-group">
-        <label class="control-label col-md-2"> Nombre Taller </label>
-        <div class="col-md-10">
-            <input type="text" id="Nombre_Taller" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
+        <label class="control-label col-md-2"> Nombre </label>
+        <div class="col-md-3">
+            <input type="text" id="NombreGrupo" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
+        </div>
+
+        <label class="control-label col-md-2 col-md-offset-2">Sesión</label>
+        <div class="col-md-3">
+            <input type="text" id="Sesion" class="form-control" onchange="Rutina_ValidarTexto(this)" />
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="control-label col-md-2">Fecha Inicio </label>
-        <div class="col-md-3">
-            <input type="text" id="Fecha_Inicio" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
-        </div>
-        <label class="control-label col-md-2 col-md-offset-2"> Fecha Fin </label>
-        <div class="col-md-3">
-            <input type="text" id="Fecha_Fin" class="form-control" onchange="Rutina_ValidarTexto(this)" />
-        </div>
-    </div>
-
-
+   
 </div>
 
 
