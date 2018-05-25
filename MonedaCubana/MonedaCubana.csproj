@@ -175,6 +175,10 @@
     <Compile Include="Migrations\201805232026378_Agregando Provincia y Municipio tabla persona.Designer.cs">
       <DependentUpon>201805232026378_Agregando Provincia y Municipio tabla persona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805252149528_atributos annos experiencia y especialidad en profesor como publicos.cs" />
+    <Compile Include="Migrations\201805252149528_atributos annos experiencia y especialidad en profesor como publicos.Designer.cs">
+      <DependentUpon>201805252149528_atributos annos experiencia y especialidad en profesor como publicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alumno.cs" />
     <Compile Include="Models\Alumno_Preparatoria.cs" />
@@ -334,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805232026378_Agregando Provincia y Municipio tabla persona.resx">
       <DependentUpon>201805232026378_Agregando Provincia y Municipio tabla persona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805252149528_atributos annos experiencia y especialidad en profesor como publicos.resx">
+      <DependentUpon>201805252149528_atributos annos experiencia y especialidad en profesor como publicos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

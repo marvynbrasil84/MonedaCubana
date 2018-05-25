@@ -10,38 +10,243 @@
 @Html.ValidationSummary(true)
 
 <div class="form-horizontal">
-    <h2>Crear Curso</h2>
+    <h2>Editar Profesor</h2>
     <hr />
 
     <div class="form-group">
-        <label class="control-label col-md-2"> Periodo </label>
+        <label class="control-label col-md-2"> CI </label>
         <div class="col-md-3">
-            <input type="text" id="Periodo" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
+            <input type="text" id="Persona_CI" class="form-control" value="@ViewBag.Profesor.CI" disabled="disabled" />
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Nombre </label>
+        <div class="col-md-3">
+            <input type="text" id="Persona_Nombre" class="form-control" value="@ViewBag.Profesor.Persona.Nombre" disabled="disabled" />
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Primer Apellido </label>
+        <div class="col-md-3">
+            <input type="text" id="Primer_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
         </div>
 
-        <label class="control-label col-md-2 col-md-offset-2"> Plan Curricular </label>
+        <label class="control-label col-md-2 col-md-offset-2"> Segundo Apellido </label>
         <div class="col-md-3">
-            <input type="text" id="Plan_Curricular" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Segundo_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Sexo </label>
+        <div class="col-md-3">
+            @*<input type="text" id="Persona_Sexo" class="form-control" value="@ViewBag.Profesor.Persona.Sexo" disabled="disabled" />*@
+            <select id="Persona_Sexo" class="form-control">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+
+            </select>
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Nivel Escolar </label>
+        <div class="col-md-3">
+
+            <select id="Persona_Nivel_Escolar" class="form-control">
+                <option value="Medio-Superior">Medio-Superior</option>
+                <option value="Medio">Medio</option>
+                <option value="Superior">Superior</option>
+            </select>
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Fecha Nacimiento </label>
+
+        <div class="col-md-3">
+            <input type="text" id="Persona_Fecha_Nacimiento" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Nacimiento" disabled="disabled" />
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Correo </label>
+        <div class="col-md-3">
+            <input type="text" id="Persona_Correo" class="form-control" value="@ViewBag.Profesor.Persona.Correo" onchange="ValidarCampoTextoFormatoCorreo(this)" />
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Teléfono </label>
+        <div class="col-md-3">
+            <input type="text" id="Persona_Telefono" class="form-control" value="@ViewBag.Profesor.Persona.Telefono" onchange="Rutina_ValidaNumero_Entero(this)" />
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Lugar de Nacimiento </label>
+        <div class="col-md-3">
+            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" value="@ViewBag.Profesor.Persona.Lugar_Nacimiento" disabled="disabled" />
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Nacionalidad </label>
+        <div class="col-md-3 ">
+            <input type="text" id="Persona_Nacionalidad" class="form-control" value="@ViewBag.Profesor.Persona.Nacionalidad" onchange="Rutina_ValidarTexto(this)" />
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Militancia </label>
+        <div class="col-md-3">
+            @*<input type="text" id="Persona_Militancia" class="form-control" value="@ViewBag.Profesor.Persona.Militancia" />*@
+            <select id="Persona_Militancia" class="form-control">
+                <option value="UJC">UJC</option>
+                <option value="PCC">PCC</option>
+                <option value="No">No</option>
+            </select>
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Salario </label>
+
+        <div class="col-md-3">
+            <input type="text" id="Persona_Salario" class="form-control" value="@ViewBag.Profesor.Salario" onchange="Rutina_ValidaNumero_Entero(this)" />
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Categoría Científica </label>
+        <div class="col-md-3">
+            <select id="Persona_Categoria_Cientifica" class="form-control">
+                <option value="Máster">Máster</option>
+                <option value="Doctor">Doctor</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <label class="control-label col-md-2 "> Color de Piel </label>
+        <div class="col-md-3">
+            <select id="Persona_Raza" class="form-control">
+                <option value="Blanco">Blanco</option>
+                <option value="Mestizo">Mestizo</option>
+                <option value="Negro">Negro</option>
+                <option value="Amarillo">Amarillo</option>
+            </select>
+
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Categoria Docente </label>
+        <div class="col-md-3">
+            <select id="Persona_Categoria_Docente" class="form-control">
+                <option value="Instructor">Instructor</option>
+                <option value="Asistente">Asistente</option>
+                <option value="Auxiliar">Auxiliar</option>
+                <option value="Titular">Titular</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Provincia </label>
+        <div class="col-md-3">
+            <select id="Provincia" class="form-control">
+                <option value="Pinar del Río">Pinar del Río</option>
+                <option value="La Habana">La Habana</option>
+                <option value="Mayabeque">Mayabeque</option>
+                <option value="Villa Clara">Villa Clara</option>
+                <option value="Cienfuegos">Cienfuegos</option>
+                <option value="Sancti Spiritus">Sancti Spiritus</option>
+                <option value="Ciego de Avila">Ciego de Avila</option>
+                <option value="Camaguey">Camaguey</option>
+                <option value="Las Tunas">Las Tunas</option>
+                <option value="Holguín">Holguín</option>
+                <option value="Granma">Granma</option>
+                <option value="Santiago de Cuba">Santiago de Cuba</option>
+                <option value="Guantánamo">Guantánamo</option>
+            </select>
+        </div>
+
+        <label class="control-label col-md-2 col-md-offset-2"> Municipio </label>
+        <div class="col-md-3">
+            <select id="Municipio" class="form-control"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Fecha Inicio </label>
+        <div class="col-md-2">
+            <input type="text" id="FIC" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Inicio_Contrato"/>
+        </div>
+        <label class="control-label col-md-2 "> Fecha Fin </label>
+        <div class="col-md-2">
+            <input type="text" id="FFC" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Fin_Contrato"/>
+        </div>
+
+        <label class="control-label col-md-2 "> Número de Contrato </label>
+        <div class="col-md-2">
+            <input type="text" id="NC" class="form-control" value="@ViewBag.Profesor.Persona.Numero_Contrato"/>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Dirección </label>
+
+        <div class="col-md-10">
+            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3" value="@ViewBag.Profesor.Persona.Direccion"></textarea>
+
         </div>
     </div>
 
 
 </div>
-
-
 
 <div class="row">
     <div class="col-md-6">
         @Html.ActionLink("<<Atrás", "Index")
     </div>
     <div class="col-md-6">
-        <input type="button" id="btnCrear" class="right btn btn-info" value="Crear" />
+        <input type="button" id="btnEditar" class="right btn btn-info" value="Editar" />
     </div>
 </div>
 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @*<script src="~/res/jsProfesor.js"></script>*@
 
+    <script src="~/res/jsProfesor.js"></script>
+    <script>
+        $(document).ready(function () {
+            //-------------Nivel Escolar------------------------------------
+            var nivel_escolar = "@ViewBag.Profesor.Persona.Nivel_Escolar";
+            $("#Persona_Nivel_Escolar").val(nivel_escolar);
+
+            var sexo = "@ViewBag.Profesor.Persona.Sexo";
+            $("#Persona_Sexo").val(sexo)
+
+            var raza = "@ViewBag.Profesor.Persona.Raza";
+            $("#Persona_Raza").val(raza);
+
+            var militancia = "@ViewBag.Profesor.Persona.Militancia";
+            $("#Persona_Militancia").val(militancia);
+
+            var Categ_Cient = "@ViewBag.Profesor.Categoria_Cientifica";
+            $("#Persona_Categoria_Cientifica").val(Categ_Cient);
+
+            var Categ_Doc = "@ViewBag.Profesor.Categoria_Docente";
+            $("#Persona_Categoria_Docente").val(Categ_Doc);
+
+            var provincia = "@ViewBag.Profesor.Persona.Provincia";
+            $("#Provincia").val(provincia);
+
+            $("#Municipio").html("");
+            var municipio = "@ViewBag.Profesor.Persona.Municipio";
+            $("#Municipio").append('<option selected value="' + municipio + '">' + municipio + '</option>');
+        })
+    </script>
 }

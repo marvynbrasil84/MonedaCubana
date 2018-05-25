@@ -28,9 +28,9 @@ namespace MonedaCubana.Models
 
         public double Salario { get; set; }
 
-        int Annos_Experiencia { get; set; }
+        public int Annos_Experiencia { get; set; }
 
-        string Especialidad { get; set; }
+        public string Especialidad { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Asignatura_Profesor> Asignatura_Profesor { get; set; }

@@ -1,4 +1,67 @@
-﻿$("#btnCrear").click(function () {
+﻿var habana = ["Arroyo Naranjo", "Boyeros", "Marianao"];
+var cienfuegos = ["Cienfuegos", "Cruces", "Palmira"];
+var santiago = ["Santiago de Cuba", "Guama", "Palma Soriano"];
+
+$("#Provincia").change(function () {
+    
+    if ($(this).val() == "La Habana") {
+        $("#Municipio").html("");
+        for ( i= 0; i < 3; i++)
+        {
+            
+            $("#Municipio").append('<option selected value="' + habana[i] + '">' + habana[i] + '</option>');
+        }
+    }
+    else
+        if ($(this).val() == "Pinar del Río")
+        {
+        }
+        else
+            if ($(this).val() == "Mayabeque") {
+            }
+            else
+                if ($(this).val() == "Villa Clara") {
+                }
+                else
+                    if ($(this).val() == "Cienfuegos")
+                    {
+                        $("#Municipio").html("");
+                        for (i = 0; i < 3; i++) {
+
+                            $("#Municipio").append('<option selected value="' + cienfuegos[i] + '">' + cienfuegos[i] + '</option>');
+                        }
+                    }
+                        else
+                        if ($(this).val() == "Ciego de Avila") {
+                        }
+                        else
+                            if ($(this).val() == "Camaguey") {
+                            }
+                            else
+                                if ($(this).val() == "Las Tunas") {
+                                }
+                                else
+                                    if ($(this).val() == "Holguín") {
+                                    }
+                                    else
+                                        if ($(this).val() == "Granma") {
+                                        }
+                                        else
+                                            if ($(this).val() == "Santiago de Cuba") {
+                                                $("#Municipio").html("");
+                                                for (i = 0; i < 3; i++) {
+
+                                                    $("#Municipio").append('<option selected value="' + santiago[i] + '">' + santiago[i] + '</option>');
+                                                }
+                                            }
+                                            else
+                                                if ($(this).val() == "Guantánamo") {
+                                                }
+                                                
+                   
+});
+
+$("#btnCrear").click(function () {
     var CI = $("#Persona_CI").val();
     var Nombre = $("#Persona_Nombre").val();
     var Sexo = $("#Persona_Sexo").val();
@@ -14,12 +77,24 @@
     var Categoria_Cientifica = $("#Persona_Categoria_Cientifica").val();
     var Salario = $("#Persona_Salario").val();
     var Raza = $("#Persona_Raza").val();
+    var Primer_Apellido = $("#Primer_Apellido").val();
+    var Segundo_Apellido = $("#Segundo_Apellido").val();
+    var Provincia = $("#Provincia").val();
+    var Municipio = $("#Municipio").val();
+    var FIC = $("#FIC").val();
+    var FFC = $("#FFC").val();
+    var NC = $("#NC").val();
+    var Annos_Experiencia = $("#Experiencia").val();
+    var Especialidad = $("#Especialidad").val();
     var profesor = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,
         Lugar_Nacimiento: Lugar_Nacimiento, Nacionalidad: Nacionalidad, Militancia: Militancia,
         Direccion: Direccion, Correo: Correo, Categoria_Docente: Categoria_Docente,
-        Categoria_Cientifica: Categoria_Cientifica, Salario: Salario, Raza: Raza
+        Categoria_Cientifica: Categoria_Cientifica, Salario: Salario, Raza: Raza,
+        Primer_Apellido: Primer_Apellido, Segundo_Apellido: Segundo_Apellido,
+        Provincia: Provincia, Municipio: Municipio, FIC: FIC, FFC: FFC, NC: NC,
+        Annos_Experiencia: Annos_Experiencia, Especialidad: Especialidad
     };
 
 
@@ -181,8 +256,10 @@ function Actualizar_Fecha() {
             // weekHeader: 'Sm',
             dateFormat: 'dd/mm/yy',
             firstDay: 1,
+            minDate:'01/01/1940',
             changeMonth: true,
-            changeYear: true
+            changeYear: true,
+            yearRange: "1930:2050"
             //  isRTL: false,
             // showMonthAfterYear: false,
             //yearSuffix: ''
