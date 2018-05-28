@@ -29,12 +29,12 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Primer Apellido </label>
         <div class="col-md-3">
-            <input type="text" id="Primer_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
+            <input type="text" id="Primer_Apellido" class="form-control" value="@ViewBag.Profesor.Persona.Primer_Apellido" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
         </div>
 
         <label class="control-label col-md-2 col-md-offset-2"> Segundo Apellido </label>
         <div class="col-md-3">
-            <input type="text" id="Segundo_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Segundo_Apellido" class="form-control" value="@ViewBag.Profesor.Persona.Segundo_Apellido" onchange="Rutina_ValidarTexto(this)" />
         </div>
     </div>
 
@@ -43,8 +43,8 @@
         <div class="col-md-3">
             @*<input type="text" id="Persona_Sexo" class="form-control" value="@ViewBag.Profesor.Persona.Sexo" disabled="disabled" />*@
             <select id="Persona_Sexo" class="form-control">
-                <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
 
             </select>
 
@@ -120,7 +120,7 @@
         <label class="control-label col-md-2 col-md-offset-2"> Categoría Científica </label>
         <div class="col-md-3">
             <select id="Persona_Categoria_Cientifica" class="form-control">
-                <option value="Máster">Máster</option>
+                <option value="Master">Máster</option>
                 <option value="Doctor">Doctor</option>
                 <option value="No">No</option>
             </select>
@@ -132,10 +132,10 @@
         <label class="control-label col-md-2 "> Color de Piel </label>
         <div class="col-md-3">
             <select id="Persona_Raza" class="form-control">
-                <option value="Blanco">Blanco</option>
-                <option value="Mestizo">Mestizo</option>
-                <option value="Negro">Negro</option>
-                <option value="Amarillo">Amarillo</option>
+                <option value="B">Blanco</option>
+                <option value="M">Mestizo</option>
+                <option value="N">Negro</option>
+                <option value="A">Amarillo</option>
             </select>
 
         </div>
@@ -178,27 +178,39 @@
     </div>
 
     <div class="form-group">
+        <label class="control-label col-md-2"> Años de Experiencia </label>
+        <div class="col-md-3">
+            <input type="text" id="Experiencia" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" value="@ViewBag.Profesor.Annos_Experiencia"/>
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Especialidad </label>
+        <div class="col-md-3">
+            <input type="text" id="Especialidad" class="form-control" onchange="Rutina_ValidarTexto(this)"  value="@ViewBag.Profesor.Especialidad"/>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>Contrato</legend>
         <label class="control-label col-md-2"> Fecha Inicio </label>
         <div class="col-md-2">
-            <input type="text" id="FIC" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Inicio_Contrato"/>
+            <input type="text" id="Fecha_Inicio_Contrato" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Inicio_Contrato" />
         </div>
         <label class="control-label col-md-2 "> Fecha Fin </label>
         <div class="col-md-2">
-            <input type="text" id="FFC" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Fin_Contrato"/>
+            <input type="text" id="Fecha_Fin_Contrato" class="form-control" value="@ViewBag.Profesor.Persona.Fecha_Fin_Contrato" />
         </div>
 
         <label class="control-label col-md-2 "> Número de Contrato </label>
         <div class="col-md-2">
-            <input type="text" id="NC" class="form-control" value="@ViewBag.Profesor.Persona.Numero_Contrato"/>
+            <input type="text" id="Numero_Contrato" class="form-control" value="@ViewBag.Profesor.Persona.Numero_Contrato" />
         </div>
 
-    </div>
+    </fieldset>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Dirección </label>
 
         <div class="col-md-10">
-            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3" value="@ViewBag.Profesor.Persona.Direccion"></textarea>
+            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3">@ViewBag.Profesor.Persona.Direccion</textarea>
 
         </div>
     </div>

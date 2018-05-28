@@ -81,9 +81,9 @@ $("#btnCrear").click(function () {
     var Segundo_Apellido = $("#Segundo_Apellido").val();
     var Provincia = $("#Provincia").val();
     var Municipio = $("#Municipio").val();
-    var FIC = $("#FIC").val();
-    var FFC = $("#FFC").val();
-    var NC = $("#NC").val();
+    var FIC = $("#Fecha_Inicio_Contrato").val();
+    var FFC = $("#Fecha_Fin_Contrato").val();
+    var NC = $("#Numero_Contrato").val();
     var Annos_Experiencia = $("#Experiencia").val();
     var Especialidad = $("#Especialidad").val();
     var profesor = {
@@ -93,7 +93,7 @@ $("#btnCrear").click(function () {
         Direccion: Direccion, Correo: Correo, Categoria_Docente: Categoria_Docente,
         Categoria_Cientifica: Categoria_Cientifica, Salario: Salario, Raza: Raza,
         Primer_Apellido: Primer_Apellido, Segundo_Apellido: Segundo_Apellido,
-        Provincia: Provincia, Municipio: Municipio, FIC: FIC, FFC: FFC, NC: NC,
+        Provincia: Provincia, Municipio: Municipio, Fecha_Inicio_Contrato: FIC, Fecha_Fin_Contrato: FFC, Numero_Contrato: NC,
         Annos_Experiencia: Annos_Experiencia, Especialidad: Especialidad
     };
 
@@ -150,13 +150,26 @@ $("#btnEditar").click(function () {
     var Categoria_Cientifica = $("#Persona_Categoria_Cientifica").val();
     var Salario = $("#Persona_Salario").val();
     var Raza = $("#Persona_Raza").val();
+    var Primer_Apellido = $("#Primer_Apellido").val();
+    var Segundo_Apellido = $("#Segundo_Apellido").val();
+    var Provincia = $("#Provincia").val();
+    var Municipio = $("#Municipio").val();
+    var FIC = $("#Fecha_Inicio_Contrato").val();
+    var FFC = $("#Fecha_Fin_Contrato").val();
+    var NC = $("#Numero_Contrato").val();
+    var Annos_Experiencia = $("#Experiencia").val();
+    var Especialidad = $("#Especialidad").val();
     var profesor = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,
         Lugar_Nacimiento: Lugar_Nacimiento, Nacionalidad: Nacionalidad, Militancia: Militancia,
         Direccion: Direccion, Correo: Correo, Categoria_Docente: Categoria_Docente,
-        Categoria_Cientifica: Categoria_Cientifica, Salario: Salario, Raza: Raza
+        Categoria_Cientifica: Categoria_Cientifica, Salario: Salario, Raza: Raza,
+        Primer_Apellido: Primer_Apellido, Segundo_Apellido: Segundo_Apellido,
+        Provincia: Provincia, Municipio: Municipio, Fecha_Inicio_Contrato: FIC, Fecha_Fin_Contrato: FFC, Numero_Contrato: NC,
+        Annos_Experiencia: Annos_Experiencia, Especialidad: Especialidad
     };
+
 
 
     try {
@@ -270,6 +283,13 @@ function Actualizar_Fecha() {
         $("#Persona_Fecha_Nacimiento").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
 
         $("#Persona_Fecha_Nacimiento").datepicker().datepicker("setDate", new Date());
+        $("#Fecha_Inicio_Contrato").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
+
+        $("#Fecha_Inicio_Contrato").datepicker().datepicker("setDate", new Date());
+
+        $("#Fecha_Fin_Contrato").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
+
+        $("#Fecha_Fin_Contrato").datepicker().datepicker("setDate", new Date());
     }
     catch (ex) {
         console.log(ex.toString);
