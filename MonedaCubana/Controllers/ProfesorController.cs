@@ -30,8 +30,7 @@ namespace MonedaCubana.Controllers
         [WebMethod]
         //[ValidateAntiForgeryToken]
         public JsonResult Adicionar([Bind(Include = "CI,Categoria_Docente,Categoria_Cientifica,Salario,Annos_Experiencia, Especialidad")] Profesor profesor,
-                                    [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre," +
-                                    "Primer_Apellido, Segundo_Apellido,Provincia, Municipio, FIC, FFC, NC")] Persona persona)
+                                    [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre,Primer_Apellido, Segundo_Apellido,Provincia, Municipio, FIC, FFC, NC")] Persona persona)
 
         {
             if (ModelState.IsValid)
@@ -44,8 +43,8 @@ namespace MonedaCubana.Controllers
 
         [WebMethod]
         //[ValidateAntiForgeryToken]
-        public JsonResult Modificar([Bind(Include = "CI,Categoria_Docente,Categoria_Cientifica,Salario")] Profesor profesor,
-            [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre")] Persona persona)
+        public JsonResult Modificar([Bind(Include = "CI,Categoria_Docente,Categoria_Cientifica,Salario,Annos_Experiencia, Especialidad")] Profesor profesor,
+            [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre,Primer_Apellido, Segundo_Apellido,Provincia, Municipio, FIC, FFC, NC")] Persona persona)
 
         {
             if (ModelState.IsValid)

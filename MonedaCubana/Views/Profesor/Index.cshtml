@@ -18,16 +18,25 @@
             @* Datos Persona *@
             <th>CI</th>
             <th>Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
             <th>Sexo</th>
             <th>Raza</th>
             <th>Nivel_Escolar</th>
             <th>Fecha_Nacimiento</th>
             <th>Telefono</th>
-            <th>Lugar_Nacimiento</th>
-            <th>Nacionalidad</th>
             <th>Militancia</th>
+            <th>Lugar_Nacimiento</th>
+            <th>Nacionalidad</th>            
+            <th>Provincia</th>
+            <th>Municipio</th>
             <th>Direccion</th>
             <th>Correo</th>
+            <th>Inicio Contrato</th>
+            <th>Fin Contrato</th>
+            <th>Número Contrato</th>
+            <th>Años de Experiencia</th>
+            <th>Especialidad</th>
             @* Datos Persona *@
             <th>Categoria_Cientifica</th>
             <th>Categoria_Docente</th>
@@ -54,6 +63,12 @@
                     @Html.DisplayFor(modelItem => item.Persona.Nombre)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Primer_Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Segundo_Apellido)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Persona.Sexo)
                 </td>
                 <td>
@@ -69,19 +84,40 @@
                     @Html.DisplayFor(modelItem => item.Persona.Telefono)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Militancia)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Persona.Lugar_Nacimiento)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Persona.Nacionalidad)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Persona.Militancia)
+                    @Html.DisplayFor(modelItem => item.Persona.Provincia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Municipio)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Persona.Direccion)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Persona.Correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Fecha_Inicio_Contrato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Fecha_Fin_Contrato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Numero_Contrato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Annos_Experiencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidad)
                 </td>
                 @* Datos Persona *@
                 <td>

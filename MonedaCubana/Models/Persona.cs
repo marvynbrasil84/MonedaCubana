@@ -23,11 +23,11 @@ namespace MonedaCubana.Models
         public string Militancia { get; set; }
 
         [Required]
-        [StringLength(1)]
+        [StringLength(30)]
         public string Raza { get; set; }
 
         [Required]
-        [StringLength(1)]
+        [StringLength(30)]
         public string Sexo { get; set; }
 
         [Required]

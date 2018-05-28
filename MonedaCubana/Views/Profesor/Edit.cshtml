@@ -29,12 +29,12 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Primer Apellido </label>
         <div class="col-md-3">
-            <input type="text" id="Primer_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
+            <input type="text" id="Primer_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" value="@ViewBag.Profesor.Persona.Primer_Apellido" disabled="disabled" />
         </div>
 
         <label class="control-label col-md-2 col-md-offset-2"> Segundo Apellido </label>
         <div class="col-md-3">
-            <input type="text" id="Segundo_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Segundo_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Profesor.Persona.Segundo_Apellido" disabled="disabled" />
         </div>
     </div>
 
@@ -195,10 +195,21 @@
     </div>
 
     <div class="form-group">
+        <label class="control-label col-md-2"> Años de Experiencia </label>
+        <div class="col-md-3">
+            <input type="text" id="Experiencia" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" value="@ViewBag.Profesor.Annos_Experiencia"/>
+        </div>
+        <label class="control-label col-md-2 col-md-offset-2"> Especialidad </label>
+        <div class="col-md-3">
+            <input type="text" id="Especialidad" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Profesor.Especialidad"/>
+        </div>
+    </div>
+
+    <div class="form-group">
         <label class="control-label col-md-2"> Dirección </label>
 
         <div class="col-md-10">
-            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3" value="@ViewBag.Profesor.Persona.Direccion"></textarea>
+            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3">@ViewBag.Profesor.Persona.Direccion</textarea>
 
         </div>
     </div>
@@ -231,12 +242,14 @@
 
             var raza = "@ViewBag.Profesor.Persona.Raza";
             $("#Persona_Raza").val(raza);
+            //alert(raza);
 
             var militancia = "@ViewBag.Profesor.Persona.Militancia";
             $("#Persona_Militancia").val(militancia);
 
             var Categ_Cient = "@ViewBag.Profesor.Categoria_Cientifica";
             $("#Persona_Categoria_Cientifica").val(Categ_Cient);
+            //alert(Categ_Cient);
 
             var Categ_Doc = "@ViewBag.Profesor.Categoria_Docente";
             $("#Persona_Categoria_Docente").val(Categ_Doc);
