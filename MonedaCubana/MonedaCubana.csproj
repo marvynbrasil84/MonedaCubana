@@ -153,7 +153,6 @@
     <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\AlumnoGrupoController.cs" />
     <Compile Include="Controllers\AlumnoTallerController.cs" />
-    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\CursoGrupoController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

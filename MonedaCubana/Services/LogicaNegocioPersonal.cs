@@ -152,7 +152,7 @@ namespace MonedaCubana.Services
             }
         }
 
-        public bool EliminarTrabajador(int ID)
+        public bool EliminarTrabajador(long ID)
         {
 
             try

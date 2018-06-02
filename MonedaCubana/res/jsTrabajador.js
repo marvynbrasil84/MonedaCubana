@@ -61,6 +61,8 @@ $("#btnCrear").click(function () {
     
     var CI = $("#Persona_CI").val();
     var Nombre = $("#Persona_Nombre").val();
+    var Primer_Apellido = $("#Primer_Apellido").val();
+    var Segundo_Apellido = $("#Segundo_Apellido").val();
     var Sexo = $("#Persona_Sexo").val();
     var Nivel_Escolar = $("#Persona_Nivel_Escolar").val();
     var Fecha_Nacimiento = $("#Persona_Fecha_Nacimiento").val();
@@ -68,18 +70,25 @@ $("#btnCrear").click(function () {
     var Lugar_Nacimiento = $("#Persona_Lugar_Nacimiento").val();
     var Nacionalidad = $("#Persona_Nacionalidad").val();
     var Militancia = $("#Persona_Militancia").val();
+    var Provincia = $("#Provincia").val();
+    var Municipio = $("#Municipio").val();
     var Direccion = $("#Persona_Direccion").val();
     var Correo = $("#Persona_Correo").val();
     var Ocupacion = $("#Persona_Ocupacion").val();
     var Salario = $("#Persona_Salario").val();
     var Raza = $("#Persona_Raza").val();
+    var FIC = $("#Fecha_Inicio_Contrato").val();
+    var FFC = $("#Fecha_Fin_Contrato").val();
+    var NC = $("#Numero_Contrato").val();
     
 
     var trabajador = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,
         Lugar_Nacimiento: Lugar_Nacimiento, Nacionalidad: Nacionalidad, Militancia: Militancia,
-        Direccion: Direccion, Correo: Correo, Ocupacion: Ocupacion, Salario: Salario, Raza: Raza
+        Direccion: Direccion, Correo: Correo, Ocupacion: Ocupacion, Salario: Salario, Raza: Raza,
+        Primer_Apellido: Primer_Apellido, Segundo_Apellido: Segundo_Apellido,
+        Provincia: Provincia, Municipio: Municipio, Fecha_Inicio_Contrato: FIC, Fecha_Fin_Contrato: FFC, Numero_Contrato: NC,
     };
 
   
@@ -135,6 +144,8 @@ $("#btnCrear").click(function () {
 $("#btnEditar").click(function () {
     var CI = $("#Persona_CI").val();
     var Nombre = $("#Persona_Nombre").val();
+    var Primer_Apellido = $("#Primer_Apellido").val();
+    var Segundo_Apellido = $("#Segundo_Apellido").val();
     var Sexo = $("#Persona_Sexo").val();
     var Nivel_Escolar = $("#Persona_Nivel_Escolar").val();
     var Fecha_Nacimiento = $("#Persona_Fecha_Nacimiento").val();
@@ -142,16 +153,25 @@ $("#btnEditar").click(function () {
     var Lugar_Nacimiento = $("#Persona_Lugar_Nacimiento").val();
     var Nacionalidad = $("#Persona_Nacionalidad").val();
     var Militancia = $("#Persona_Militancia").val();
+    var Provincia = $("#Provincia").val();
+    var Municipio = $("#Municipio").val();
     var Direccion = $("#Persona_Direccion").val();
     var Correo = $("#Persona_Correo").val();
     var Ocupacion = $("#Persona_Ocupacion").val();
     var Salario = $("#Persona_Salario").val();
     var Raza = $("#Persona_Raza").val();
+    var FIC = $("#Fecha_Inicio_Contrato").val();
+    var FFC = $("#Fecha_Fin_Contrato").val();
+    var NC = $("#Numero_Contrato").val();
+
+
     var trabajador = {
         CI: CI, Nombre: Nombre, Sexo: Sexo,
         Nivel_Escolar: Nivel_Escolar, Fecha_Nacimiento: Fecha_Nacimiento, Telefono: Telefono,
         Lugar_Nacimiento: Lugar_Nacimiento, Nacionalidad: Nacionalidad, Militancia: Militancia,
-        Direccion: Direccion, Correo: Correo, Ocupacion: Ocupacion, Salario: Salario, Raza: Raza
+        Direccion: Direccion, Correo: Correo, Ocupacion: Ocupacion, Salario: Salario, Raza: Raza,
+        Primer_Apellido: Primer_Apellido, Segundo_Apellido: Segundo_Apellido,
+        Provincia: Provincia, Municipio: Municipio, Fecha_Inicio_Contrato: FIC, Fecha_Fin_Contrato: FFC, Numero_Contrato: NC,
     };
 
 
@@ -269,6 +289,13 @@ function Actualizar_Fecha()
         $("#Persona_Fecha_Nacimiento").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
         
         $("#Persona_Fecha_Nacimiento").datepicker().datepicker("setDate", new Date());
+        $("#Fecha_Inicio_Contrato").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
+
+        $("#Fecha_Inicio_Contrato").datepicker().datepicker("setDate", new Date());
+
+        $("#Fecha_Fin_Contrato").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
+
+        $("#Fecha_Fin_Contrato").datepicker().datepicker("setDate", new Date());
 
        
     }
