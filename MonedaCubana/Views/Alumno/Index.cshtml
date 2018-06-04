@@ -10,77 +10,127 @@
 <p>
     @Html.ActionLink("Nuevo", "Create", "Controller", new { @class = "btn btn-info", style = "margin-bottom:1em" })
 </p>
-<table class="display tableDesign" id="Alumno">
+<table class="display tableDesign" id="Alumnos">
     <thead>
         <tr>
             <th>Sel.</th>
             <th>Eliminar</th>
-            <th>
-                @Html.DisplayNameFor(model => model.Grupo.Sesion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Persona.Militancia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono_Padre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono_Madre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre_Padre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre_Madre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Foto)
-            </th>
+            @* Datos Persona *@
+            <th>CI</th>
+            <th>Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Sexo</th>
+            <th>Color_de_Piel</th>
+            <th>Nivel_Escolar</th>
+            <th>Fecha_Nacimiento</th>
+            <th>Telefono</th>
+            <th>Lugar_Nacimiento</th>
+            <th>Nacionalidad</th>
+            <th>Militancia</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            @* Datos Persona *@
             
+            <th>Nombre Padre</th>
+            <th>Telf. Padre</th>
+            <th>Nombre Madre</th>
+            <th>Telf. Madre</th>         
+            <th>Categoría</th>
+            <th>Contrato</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
-    {
-        <tr>
-            <td style="text-align:center">
-                @*<i class="fa fa-edit"></i>*@
-                @Html.ActionLink(" ", "Edit", new { id = item.CI }, new { @class = "fa fa-edit", style = "margin-bottom:1em" })
-            </td>
-            <td style="text-align:center">
-                @*<i class="fa fa-close"></i>*@
-                <i class="fa fa-close" data-tipo="borrar" data-ci=@item.CI></i>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Grupo.Sesion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona.Militancia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono_Padre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono_Madre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre_Padre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre_Madre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-            
-        </tr>
-}
-    </tbody>
+        {
+            <tr>
+                <td style="text-align:center">
+                    @*<i class="fa fa-edit"></i>*@
+                    @Html.ActionLink(" ", "Edit", new { id = item.CI }, new { @class = "fa fa-edit", style = "margin-bottom:1em" })
+                </td>
+                <td style="text-align:center">
+                    @*<i class="fa fa-close"></i>*@
+                    <i class="fa fa-close" data-tipo="borrar" data-ci=@item.CI></i>
+                </td>
+                @* Datos Persona *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.CI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Primer_Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Segundo_Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Raza)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Nivel_Escolar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Fecha_Nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Lugar_Nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Nacionalidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Militancia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Correo)
+                </td>
+                @* Datos Persona *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Padre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono_Padre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Madre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono_Madre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Numero_Contrato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Fecha_Inicio_Contrato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Fecha_Fin_Contrato)
+                </td>
 
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/res/jsAlumno.js"></script>
+
+}

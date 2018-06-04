@@ -14,12 +14,12 @@
     <div class="form-group">
         <label class="control-label col-md-2"> CI </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_CI" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" maxlength="11" />
+            <input type="text" id="Persona_CI" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" maxlength="11" value="@ViewBag.Alumno.CI"/>
         </div>
 
         <label class="control-label col-md-2 col-md-offset-2"> Nombre </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Nombre" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Persona_Nombre" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Alumno.Persona.Nombre"/>
         </div>
     </div>
 
@@ -48,12 +48,12 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Fecha Nacimiento </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Fecha_Nacimiento" class="form-control" />
+            <input type="text" id="Persona_Fecha_Nacimiento" class="form-control" value="@ViewBag.Alumno.Persona.Fecha_Nacimiento"/>
         </div>
 
         <label class="control-label col-md-2 col-md-offset-2"> Correo </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Correo" class="form-control" onchange="ValidarCampoTextoFormatoCorreo(this)" />
+            <input type="text" id="Persona_Correo" class="form-control" onchange="ValidarCampoTextoFormatoCorreo(this)" value="@ViewBag.Alumno.Persona.Correo"/>
 
         </div>
     </div>
@@ -61,18 +61,18 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Teléfono </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Telefono" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" />
+            <input type="text" id="Persona_Telefono" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" value="@ViewBag.Alumno.Persona.Telefono"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Lugar de Nacimiento </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Alumno.Persona.Lugar_Nacimiento"/>
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Nacionalidad </label>
         <div class="col-md-3 ">
-            <input type="text" id="Persona_Nacionalidad" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Persona_Nacionalidad" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Alumno.Persona.Nacionalidad"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Militancia </label>
         <div class="col-md-3">
@@ -87,22 +87,22 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Nombre Padre </label>
         <div class="col-md-3">
-            <input type="text" id="Nombre_Padre" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Nombre_Padre" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Alumno.Nombre_Padre"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Teléfone Padre </label>
         <div class="col-md-3">
-            <input type="text" id="Telefono_Padre" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" />
+            <input type="text" id="Telefono_Padre" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" value="@ViewBag.Alumno.Telefono_Padre"/>
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Nombre Madre </label>
         <div class="col-md-3">
-            <input type="text" id="Nombre_Madre" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Nombre_Madre" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Alumno.Nombre_Madre"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Teléfone Madre </label>
         <div class="col-md-3">
-            <input type="text" id="Telefono_Madre" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" />
+            <input type="text" id="Telefono_Madre" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" value="@ViewBag.Alumno.Telefono_Madre"/>
         </div>
     </div>
 
@@ -110,18 +110,18 @@
 
         <label class="control-label col-md-2 "> Categoría </label>
         <div class="col-md-3">
-            <input type="text" id="Categoria" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+            <input type="text" id="Categoria" class="form-control" onchange="Rutina_ValidarTexto(this)" value="@ViewBag.Alumno.Categoria"/>
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Foto </label>
         <div class="col-md-3">
-            <input type="file" class="form-control" />
+            <input type="file" class="form-control" value="@ViewBag.Alumno.Foto"/>
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Dirección </label>
         <div class="col-md-10">
-            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3"></textarea>
+            <textarea type="text" id="Persona_Direccion" class="form-control" rows="3">@ViewBag.Alumno.Persona.Direccion</textarea>
         </div>
     </div>
 </div>
@@ -138,4 +138,30 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+     $(document).ready(function () {
+            //-------------Nivel Escolar------------------------------------
+            var nivel_escolar = "@ViewBag.Alumno.Persona.Nivel_Escolar";
+            $("#Persona_Nivel_Escolar").val(nivel_escolar);
+
+            var sexo = "@ViewBag.Alumno.Persona.Sexo";
+            $("#Persona_Sexo").val(sexo)
+
+            var raza = "@ViewBag.Alumno.Persona.Raza";
+            $("#Persona_Raza").val(raza);
+
+            var militancia = "@ViewBag.Alumno.Persona.Militancia";
+            $("#Persona_Militancia").val(militancia);
+
+            var provincia = "@ViewBag.Alumno.Persona.Provincia";
+            $("#Provincia").val(provincia);
+
+            $("#Municipio").html("");
+            var municipio = "@ViewBag.Alumno.Persona.Municipio";
+            @*$("#Municipio").append('<option selected value="' + municipio + '">' + municipio + '</option>');*@
+            $("#Municipio").val(municipio);
+            })
+</script>
 }

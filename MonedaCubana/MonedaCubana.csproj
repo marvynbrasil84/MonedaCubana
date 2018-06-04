@@ -167,21 +167,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805232022483_Corrigiendo tabla persona.cs" />
-    <Compile Include="Migrations\201805232022483_Corrigiendo tabla persona.Designer.cs">
-      <DependentUpon>201805232022483_Corrigiendo tabla persona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805232026378_Agregando Provincia y Municipio tabla persona.cs" />
-    <Compile Include="Migrations\201805232026378_Agregando Provincia y Municipio tabla persona.Designer.cs">
-      <DependentUpon>201805232026378_Agregando Provincia y Municipio tabla persona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805252149528_atributos annos experiencia y especialidad en profesor como publicos.cs" />
-    <Compile Include="Migrations\201805252149528_atributos annos experiencia y especialidad en profesor como publicos.Designer.cs">
-      <DependentUpon>201805252149528_atributos annos experiencia y especialidad en profesor como publicos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261519384_cambiando el tamanno en el data anottation del modelo persona.cs" />
-    <Compile Include="Migrations\201805261519384_cambiando el tamanno en el data anottation del modelo persona.Designer.cs">
-      <DependentUpon>201805261519384_cambiando el tamanno en el data anottation del modelo persona.cs</DependentUpon>
+    <Compile Include="Migrations\201806021102249_Version Gabriel.cs" />
+    <Compile Include="Migrations\201806021102249_Version Gabriel.Designer.cs">
+      <DependentUpon>201806021102249_Version Gabriel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alumno.cs" />
@@ -203,6 +191,7 @@
     <Compile Include="Models\Ubicación.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LogicaNegocioGrupo.cs" />
     <Compile Include="Services\LogicaNegocioPersonal.cs" />
     <Compile Include="Services\LogicaNegocioPlanEntrenamiento.cs" />
     <Compile Include="Services\LogicaNegocioProfesorAsignatura.cs" />
@@ -229,6 +218,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Imagenes\cargando.gif" />
     <Content Include="Imagenes\logo.png" />
+    <Content Include="res\jsAlumno.js" />
     <Content Include="res\jsAsociarTaller.js" />
     <Content Include="res\jsGenerico.js" />
     <Content Include="res\jsPlanEntrenamiento.js" />
@@ -337,17 +327,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805232022483_Corrigiendo tabla persona.resx">
-      <DependentUpon>201805232022483_Corrigiendo tabla persona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805232026378_Agregando Provincia y Municipio tabla persona.resx">
-      <DependentUpon>201805232026378_Agregando Provincia y Municipio tabla persona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805252149528_atributos annos experiencia y especialidad en profesor como publicos.resx">
-      <DependentUpon>201805252149528_atributos annos experiencia y especialidad en profesor como publicos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261519384_cambiando el tamanno en el data anottation del modelo persona.resx">
-      <DependentUpon>201805261519384_cambiando el tamanno en el data anottation del modelo persona.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806021102249_Version Gabriel.resx">
+      <DependentUpon>201806021102249_Version Gabriel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

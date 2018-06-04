@@ -7,13 +7,13 @@ namespace MonedaCubana.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AgregandoProvinciayMunicipiotablapersona : IMigrationMetadata
+    public sealed partial class VersionGabriel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AgregandoProvinciayMunicipiotablapersona));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(VersionGabriel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201805232026378_Agregando Provincia y Municipio tabla persona"; }
+            get { return "201806021102249_Version Gabriel"; }
         }
         
         string IMigrationMetadata.Source

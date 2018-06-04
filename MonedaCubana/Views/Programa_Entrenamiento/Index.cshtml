@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSolution.cshtml";
 }
 
 <h2>Index</h2>
@@ -9,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="Plan_Entrenamiento">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Plan_Curricular)
@@ -37,3 +38,9 @@
 }
 
 </table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/res/jsPlanEntrenamiento.js"></script>
+
+}

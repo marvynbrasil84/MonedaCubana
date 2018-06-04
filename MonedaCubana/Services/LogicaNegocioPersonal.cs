@@ -201,5 +201,60 @@ namespace MonedaCubana.Services
                 return false;
             }
         }
+
+        public List<Alumno> obtenerAlumnos()
+        {
+            try
+            {
+                List<Alumno> lista = db.Alumno.ToList();
+                return lista;
+            }
+            catch(Exception ex)
+            {
+                return new List<Alumno>();
+            }
+            
+        }
+
+        public bool Adicionar_Alumno(Persona p, Alumno a)
+        {
+            try
+            {
+                db.Persona.Add(p);
+                db.Alumno.Add(a);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public string ObtenerGrupo_CIAlumno(long? CI)
+        {
+            try
+            {
+                Alumno alumno = db.Alumno.Find(CI);
+                return alumno.NombreGrupo;
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
+        }
+
+        public Alumno Obtener_Alumno(long? CI)
+        {
+            try
+            {
+                Alumno alumno = db.Alumno.Find(CI);
+                return alumno;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
