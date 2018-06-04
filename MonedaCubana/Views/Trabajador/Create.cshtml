@@ -21,7 +21,19 @@
 
         <label class="control-label col-md-2 col-md-offset-2"> Nombre </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Nombre" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
+            <input type="text" id="Persona_Nombre" class="form-control" onchange="Rutina_ValidarTexto(this)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Primer Apellido </label>
+        <div class="col-md-3">
+            <input type="text" id="Primer_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" maxlength="11" />
+        </div>
+
+        <label class="control-label col-md-2 col-md-offset-2"> Segundo Apellido </label>
+        <div class="col-md-3">
+            <input type="text" id="Segundo_Apellido" class="form-control" onchange="Rutina_ValidarTexto(this)" />
         </div>
     </div>
 
@@ -29,11 +41,11 @@
         <label class="control-label col-md-2"> Sexo </label>
         <div class="col-md-3">
             <select id="Persona_Sexo" class="form-control">
-                <option value="M">M</option>
-                <option value="F">F</option>
-                
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+
             </select>
-            
+
         </div>
 
         <label class="control-label col-md-2 col-md-offset-2"> Nivel Escolar </label>
@@ -63,18 +75,18 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Teléfono </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Telefono" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)"/>
+            <input type="text" id="Persona_Telefono" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" />
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Lugar de Nacimiento </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
+            <input type="text" id="Persona_Lugar_Nacimiento" class="form-control" onchange="Rutina_ValidarTexto(this)" />
         </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2"> Nacionalidad </label>
         <div class="col-md-3 ">
-            <input type="text" id="Persona_Nacionalidad" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
+            <input type="text" id="Persona_Nacionalidad" class="form-control" onchange="Rutina_ValidarTexto(this)" />
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Militancia </label>
         <div class="col-md-3">
@@ -90,26 +102,72 @@
     <div class="form-group">
         <label class="control-label col-md-2"> Salario </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Salario" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)"/>
+            <input type="text" id="Persona_Salario" class="form-control" onchange="Rutina_ValidaNumero_Entero(this)" />
         </div>
         <label class="control-label col-md-2 col-md-offset-2"> Cargo </label>
         <div class="col-md-3">
-            <input type="text" id="Persona_Ocupacion" class="form-control" onchange="Rutina_ValidarTexto(this)"/>
+            <input type="text" id="Persona_Ocupacion" class="form-control" onchange="Rutina_ValidarTexto(this)" />
         </div>
     </div>
 
     <div class="form-group">
 
-        <label class="control-label col-md-2 "> Raza </label>
+        <label class="control-label col-md-2 "> Color de Piel </label>
         <div class="col-md-3">
             <select id="Persona_Raza" class="form-control">
-                <option value="B">B</option>
-                <option value="M">M</option>
-                <option value="N">N</option>
+                <option value="B">Blanco</option>
+                <option value="M">Mestizo</option>
+                <option value="N">Negro</option>
+                <option value="A">Amarillo</option>
             </select>
 
         </div>
     </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> Provincia </label>
+        <div class="col-md-3">
+            <select id="Provincia" class="form-control">
+                <option value="Pinar del Río">Pinar del Río</option>
+                <option value="La Habana">La Habana</option>
+                <option value="Mayabeque">Mayabeque</option>
+                <option value="Villa Clara">Villa Clara</option>
+                <option value="Cienfuegos">Cienfuegos</option>
+                <option value="Sancti Spiritus">Sancti Spiritus</option>
+                <option value="Ciego de Avila">Ciego de Avila</option>
+                <option value="Camaguey">Camaguey</option>
+                <option value="Las Tunas">Las Tunas</option>
+                <option value="Holguín">Holguín</option>
+                <option value="Granma">Granma</option>
+                <option value="Santiago de Cuba">Santiago de Cuba</option>
+                <option value="Guantánamo">Guantánamo</option>
+            </select>
+        </div>
+
+        <label class="control-label col-md-2 col-md-offset-2"> Municipio </label>
+        <div class="col-md-3">
+            <select id="Municipio" class="form-control"></select>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend>Contrato</legend>
+        <label class="control-label col-md-2"> Fecha Inicio </label>
+        <div class="col-md-2">
+            <input type="text" id="Fecha_Inicio_Contrato" class="form-control" />
+        </div>
+        <label class="control-label col-md-2 "> Fecha Fin </label>
+        <div class="col-md-2">
+            <input type="text" id="Fecha_Fin_Contrato" class="form-control" />
+        </div>
+
+        <label class="control-label col-md-2 "> Número de Contrato </label>
+        <div class="col-md-2">
+            <input type="text" id="Numero_Contrato" class="form-control" />
+        </div>
+
+    </fieldset>
+
 
     <div class="form-group">
         <label class="control-label col-md-2"> Dirección </label>

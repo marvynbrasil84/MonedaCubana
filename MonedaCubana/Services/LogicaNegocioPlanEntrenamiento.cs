@@ -30,6 +30,11 @@ namespace MonedaCubana.Services
             }
         }
 
+        internal Programa_Entrenamiento ObtenerPlan_Curricular(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         //Devuelve solamente el periodo del curso de entrenamiento
         public List<String> Nombre_Curso_Entrenamiento()
         {

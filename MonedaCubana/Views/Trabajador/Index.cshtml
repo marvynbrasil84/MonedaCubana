@@ -13,54 +13,29 @@
 <table class="display tableDesign" id="trabajadores">
     <thead>
         <tr>
-            <th>
-                Sel.
-            </th>
-            <th>
-                Eliminar
-            </th>
-            <th>
-                CI
-            </th>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Sexo
-            </th>
-            <th>
-                Color de Piel
-            </th>
-            <th>
-                Nivel_Escolar
-            </th>
-            <th>
-                Fecha_Nacimiento
-            </th>
-            <th>
-                Telefono
-            </th>
-            <th>
-                Lugar_Nacimiento
-            </th>
-            <th>
-                Nacionalidad
-            </th>
-            <th>
-                Militancia
-            </th>
-            <th>
-                Direccion
-            </th>
-            <th>
-                Correo
-            </th>
-            <th>
-                Ocupacion
-            </th>
-            <th>
-                Salario
-            </th>
+            <th>Sel.</th>
+            <th>Eliminar</th>
+            @* Datos Persona *@
+            <th>CI</th>
+            <th>Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Sexo</th>
+            <th>Color_de_Piel</th>
+            <th>Nivel_Escolar</th>
+            <th>Fecha_Nacimiento</th>
+            <th>Telefono</th>
+            <th>Lugar_Nacimiento</th>
+            <th>Nacionalidad</th>
+            <th>Militancia</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            @* Datos Persona *@
+            <th>Ocupacion</th>
+            <th>Salario</th>
+            <th>Contrato</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
             @*<th></th>*@
         </tr>
     </thead>
@@ -69,11 +44,11 @@
         {
         <tr>
             <td style="text-align:center">
-               @*<i class="fa fa-edit" data-CI=item.Persona.CI></i>*@
-                @Html.ActionLink(" ", "Edit", new { id = item.CI },  new { @class = "fa fa-edit", style = "margin-bottom:1em" })
+                @*<i class="fa fa-edit" data-CI=item.Persona.CI></i>*@
+                @Html.ActionLink(" ", "Edit", new { id = item.CI }, new { @class = "fa fa-edit", style = "margin-bottom:1em" })
             </td>
             <td style="text-align:center">
-                <i class="fa fa-close" data-tipo="borrar" data-ci="@item.CI" ></i>
+                <i class="fa fa-close" data-tipo="borrar" data-ci="@item.CI"></i>
                 @*@Html.ActionLink("Delete", "Delete", new { id = item.CI })*@
             </td>
             <td>
@@ -81,6 +56,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Persona.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Primer_Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Segundo_Apellido)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Persona.Sexo)
@@ -118,11 +99,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Salario)
             </td>
-            @*<td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CI }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CI }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CI })
-            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Numero_Contrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Fecha_Inicio_Contrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona.Fecha_Fin_Contrato)
+            </td>
         </tr>
         }
     </tbody>

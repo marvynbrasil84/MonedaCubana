@@ -60,11 +60,9 @@ namespace MonedaCubana.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [WebMethod]
         //[ValidateAntiForgeryToken]
-        public JsonResult Adicionar(/*String CI, String Nombre, String Sexo, String Nivel_Escolar,
-            String Fecha_Nacimiento,String Telefono,String Lugar_Nacimiento,String Nacionalidad,
-            String Militancia,String Direccion,String Correo,String Ocupacion,String Salario*/
-            [Bind(Include = "CI,Ocupacion,Salario")] Trabajador trabajador,
-            [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre")] Persona persona) 
+        public JsonResult Adicionar([Bind(Include = "CI,Ocupacion,Salario")] Trabajador trabajador,
+                                    [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre," +
+                                    "Primer_Apellido, Segundo_Apellido,Provincia, Municipio, Fecha_Inicio_Contrato, Fecha_Fin_Contrato, Numero_Contrato")] Persona persona) 
 
         {
             if (ModelState.IsValid)
@@ -78,7 +76,8 @@ namespace MonedaCubana.Controllers
         [WebMethod]
         //[ValidateAntiForgeryToken]
         public JsonResult Modificar([Bind(Include = "CI,Ocupacion,Salario")] Trabajador trabajador,
-            [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre")] Persona persona)
+                                    [Bind(Include = "CI,Militancia,Raza,Sexo,Nivel_Escolar,Fecha_Nacimiento,Direccion,Telefono,Correo,Lugar_Nacimiento,Nacionalidad,Nombre," +
+                                    "Primer_Apellido, Segundo_Apellido,Provincia, Municipio, Fecha_Inicio_Contrato, Fecha_Fin_Contrato, Numero_Contrato")] Persona persona)
 
         {
             if (ModelState.IsValid)
@@ -91,7 +90,7 @@ namespace MonedaCubana.Controllers
 
         [WebMethod]
         //[ValidateAntiForgeryToken]
-        public JsonResult Eliminar(int CI)
+        public JsonResult Eliminar(long CI)
 
         {
            bool resultado = ctr.EliminarTrabajador(CI);
