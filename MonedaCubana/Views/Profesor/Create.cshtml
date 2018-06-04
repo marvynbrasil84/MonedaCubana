@@ -41,8 +41,8 @@
         <label class="control-label col-md-2"> Sexo </label>
         <div class="col-md-3">
             <select id="Persona_Sexo" class="form-control">
-                <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
 
             </select>
 
@@ -106,7 +106,7 @@
         <label class="control-label col-md-2 col-md-offset-2"> Categoría Científica </label>
         <div class="col-md-3">
             <select id="Persona_Categoria_Cientifica" class="form-control">
-                <option value="Máster">Máster</option>
+                <option value="Master">Máster</option>
                 <option value="Doctor">Doctor</option>
                 <option value="No">No</option>
             </select>
@@ -118,10 +118,10 @@
         <label class="control-label col-md-2 "> Color de Piel </label>
         <div class="col-md-3">
             <select id="Persona_Raza" class="form-control">
-                <option value="Blanco">Blanco</option>
-                <option value="Mestizo">Mestizo</option>
-                <option value="Negro">Negro</option>
-                <option value="Amarillo">Amarillo</option>
+                <option value="B">Blanco</option>
+                <option value="M">Mestizo</option>
+                <option value="N">Negro</option>
+                <option value="A">Amarillo</option>
             </select>
 
         </div>
@@ -159,26 +159,8 @@
 
         <label class="control-label col-md-2 col-md-offset-2"> Municipio </label>
         <div class="col-md-3">
-            <select id="Municipio" class="form-control">
-            </select>
+            <select id="Municipio" class="form-control"></select>
         </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-md-2"> Fecha Inicio </label>
-        <div class="col-md-2">
-            <input type="text" id="FIC" class="form-control" />
-        </div>
-        <label class="control-label col-md-2 "> Fecha Fin </label>
-        <div class="col-md-2">
-            <input type="text" id="FFC" class="form-control" />
-        </div>
-
-        <label class="control-label col-md-2 "> Número de Contrato </label>
-        <div class="col-md-2">
-            <input type="text" id="NC" class="form-control" />
-        </div>
-
     </div>
 
     <div class="form-group">
@@ -191,6 +173,29 @@
             <input type="text" id="Especialidad" class="form-control" onchange="Rutina_ValidarTexto(this)" />
         </div>
     </div>
+
+    @*<div class="form-group">*@
+        <fieldset>
+            <legend>Contrato</legend>
+            <label class="control-label col-md-2"> Fecha Inicio </label>
+            <div class="col-md-2">
+                <input type="text" id="Fecha_Inicio_Contrato" class="form-control" />
+            </div>
+            <label class="control-label col-md-2 "> Fecha Fin </label>
+            <div class="col-md-2">
+                <input type="text" id="Fecha_Fin_Contrato" class="form-control" />
+            </div>
+
+            <label class="control-label col-md-2 "> Número de Contrato </label>
+            <div class="col-md-2">
+                <input type="text" id="Numero_Contrato" class="form-control" />
+            </div>
+
+        </fieldset>
+        
+    @*</div>*@
+
+
 
     <div class="form-group">
         <label class="control-label col-md-2"> Dirección </label>

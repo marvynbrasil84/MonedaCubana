@@ -308,3 +308,16 @@ a.article, a.article:hover {
 i {
     cursor: pointer;
 }
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    padding: .0em .625em 1.75em 0.6em;
+    margin-bottom: 2em;
+}
+fieldset legend {
+    width: inherit;
+    padding: 0 10px;
+    border-bottom: none;
+    margin-bottom: 10px;
+    color: inherit;
+}

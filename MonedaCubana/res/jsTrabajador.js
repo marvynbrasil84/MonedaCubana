@@ -269,6 +269,8 @@ function Actualizar_Fecha()
         $("#Persona_Fecha_Nacimiento").mask("99/99/9999", { placeholder: "dd/mm/yyyy" });
         
         $("#Persona_Fecha_Nacimiento").datepicker().datepicker("setDate", new Date());
+
+       
     }
     catch (ex) {
         console.log(ex.toString);
