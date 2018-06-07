@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MonedaCubana.Models.Alumno>
+@{
+    List<MonedaCubana.Models.Taller> CountryList =ViewBag.Talleres;
+    
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSolution.cshtml";
+}
+
+<h2>Alumno-Taller</h2>
+
+
+@*<div class="form-group">
+
+    <label class="control-label col-md-2 col-md-offset-2"> Talleres </label>
+        <div class="col-md-3">
+
+             <select id="Taller" class="form-control">
+                 @foreach (var stud in @ViewBag.Talleres)
+                 {
+
+                     <option value=@stud>@stud</option>
+
+                 }
+             </select>
+
+         </div>
+    </div>*@
+<table class="display tableDesign" id="profesorasignatura">
+    <thead>
+        <tr>
+            <th>
+                Nombre Alumno
+            </th>
+            @*<th>
+                Categoria Docente
+            </th>*@
+            @*<th>
+                Categoria Científica
+            </th>*@
+            <th style="text-align:center">
+                Asignar Talleres
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona.Nombre)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Categoria_Docente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
+                </td>*@
+                <td style="text-align:center">
+                    <i class="fa fa-list-alt asociar" data-toggle="modal" data-target="#ModalTipoArchivo" data-tipo=@item.CI></i>
+                    @*<input type="button" class="asociar" data-toggle="modal" data-target="#ModalTipoArchivo" data-tipo=@item.CI />*@
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<div class="modal fade" id="ModalTipoArchivo" tabindex="-1" @*role="dialog" data-accion="" data-backdrop="static" data-keyboard="false"*@>
+    <div class="modal-dialog" role="document" style="width:70%">
+        <div class="modal-content">
+            <div id="contentModalTipoArchivo" class="modal-body">
+               @* @Html.Partial("~/Views/profesorasignatura/_PartialAsignatura.cshtml", CountryList)*@
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/res/jsAlumnoAsignatura.js"></script>
+    
+}

@@ -57,6 +57,38 @@ namespace MonedaCubana.Services
                 return false;
             }
         }
+
+        public bool Asignar_Profesor_Grupo(Asignatura_Profesor asignacion, string accion)
+        {
+            try
+            {
+                if (accion == "I")
+                {
+                    using (ApplicationDBContext db = new ApplicationDBContext())
+                    {
+                        db.Asignatura_Profesor.Add(asignacion);
+                        db.SaveChanges();
+                    }
+                }
+                else
+                    if (accion == "B")
+                {
+
+                    using (ApplicationDBContext db = new ApplicationDBContext())
+                    {
+                        Asignatura_Profesor asignacionSel = db.Asignatura_Profesor.SingleOrDefault(x => x.TallerID == asignacion.TallerID);
+                        db.Asignatura_Profesor.Remove(asignacionSel);
+                        db.SaveChanges();
+                    }
+
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public List<ProfesorAsociacionTaller> TalleresporProfesor(long CI)
         {
             try

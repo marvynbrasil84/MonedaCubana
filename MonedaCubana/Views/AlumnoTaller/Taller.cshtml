@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MonedaCubana.Models.AlumnoAsociacionTaller>
+
+<table class="display tableDesign" id="profesorasignaturaPartial">
+    <thead>
+        <tr>
+            <th>
+                Nombre Taller
+            </th>
+            @*<th>
+                    Categoria Docente
+                </th>
+                <th>
+                    Categoria Científica
+                </th>*@
+            <th style="text-align:center">
+               Alumno Cursa Asignaturas
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                                       
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Categoria_Docente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria_Cientifica)
+                    </td>*@
+                <td style="text-align:center">
+                    @* <input type="checkbox" class="asociarPartial" data-tipo=@item.TallerID />*@
+                    @*@Html.DisplayFor(modelItem => item.Posee)*@
+                    @{
+                        if (item.Posee == "S")
+                        {
+                                <input type="checkbox" class="asociarPartial" checked data-tipo="@item.TallerID"/>
+                        }
+                        else
+                        {
+                            <input type = "checkbox" class="asociarPartial" data-tipo="@item.TallerID" />
+                        }
+
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+@*<div class="row">
+    
+    <div class="col-md-6">
+        <input type="button" id="btnAsignar" class="right btn btn-info" value="Asignar" />
+    </div>
+</div>*@
+
+<script src="~/res/jsAsociarAlumnoTaller.js"></script>
+
+    
+
+
